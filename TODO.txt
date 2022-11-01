@@ -1,0 +1,5 @@
+Generics: https://docs.oracle.com/javase/tutorial/java/generics/types.html
+Collections: https://www.geeksforgeeks.org/collections-in-java-2/?ref=lbp
+Threads: https://www.geeksforgeeks.org/multithreading-in-java/?ref=lbp
+Files: https://www.geeksforgeeks.org/file-handling-in-java-with-crud-operations/?ref=lbp
+Interfaces: https://www.geeksforgeeks.org/function-interface-in-java-with-examples/
