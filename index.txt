@@ -1,0 +1,5 @@
+Stream:
+- Ways to perform identical operations on collections (ArrayList, List, Collections)
+- Multiply every index buy 2
+- Find all even numbers / add together all even numbers
+
