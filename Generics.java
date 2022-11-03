@@ -26,8 +26,15 @@ public class Generics<A> {
         List<Double> result = g.fromArrayToList(array, sqrt);
         result.forEach(e -> System.out.print(e + " "));
 
+        g.fromArrayToList(new Integer[]{1, 2, 3, 4, 5}); // number
+
         //g.multipleBounds("Wrong Type"); // error
         g.multipleBounds(1); // number
+
+
+        g.upperBoundWildcards(new ArrayList<String>()); // String is hight than Object
+
+        g.lowerBoundWildcard(new ArrayList<Object>()); // Object is lover than Integer
     }
 
     // generic methods
@@ -44,9 +51,9 @@ public class Generics<A> {
 
     // bounded generics
 
-    // public <T extends Number> List<T> fromArrayToList(T[] a) {
-
-    // }
+    public <T extends Number> List<T> fromArrayToList(T[] a) {
+        return Arrays.stream(a).collect(Collectors.toList());
+    }
 
     //multiple bounds
 
@@ -56,7 +63,7 @@ public class Generics<A> {
 
     // upper bound wildcards
 
-    public void upperBoundWildcards(List<? extends String> buildings) {
+    public void upperBoundWildcards(List<? extends Object> buildings) {
 
     }
 
