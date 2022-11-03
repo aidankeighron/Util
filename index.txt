@@ -10,3 +10,11 @@ Generics:
 - Passing in variable type to methods/classes
 - Classes you need to specify what type (ArrayList<>)
 - Methods the type is figured out automatically
+
+Interfaces:
+- commonly used in Streams
+- excessive use of lambdas
+- seemingly useless for "standard use" main use is as method parameters or Streams
+
+Multithreading
+- concurrent code execution

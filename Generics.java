@@ -72,4 +72,22 @@ public class Generics<A> {
     public void lowerBoundWildcard(List<? super A> exaple) {
 
     }
+
+    //***//Wildcards//***//
+    // if you want to be able to pass in List<Integer>, List<Double>, and List<Long>
+    // if you try to pass in List<Boolean> you will get an error
+    public void upper(List<? extends Number> list) {
+
+    }
+
+    // if you want to be able to pass in List<Integer>, List<Object>, and List<Number>
+    // if you try to pass in List<Double> you will get an error
+    public void lower(List<? super Integer> list) {
+
+    }
+
+    // can only use methods from the Object class
+    public void none(List<?> list) {
+        
+    }
 }
