@@ -18,3 +18,6 @@ Interfaces:
 
 Multithreading
 - concurrent code execution
+
+Serialization
+- save a snapshot of a class to disk
