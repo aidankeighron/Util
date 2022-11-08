@@ -1,7 +1,6 @@
 import java.util.*;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ConcurrentSkipListSet;
-import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.concurrent.*;
+import java.util.Collection;
 
 public class Collections {
     //https://www.geeksforgeeks.org/collections-in-java-2/?ref=lbp
@@ -13,7 +12,7 @@ public class Collections {
 
     //use List if you need an array-like data structure and you need to iterate over the elements
     //use Map if you need something like a dictionary
-    //use a Set if you only need to decide if something belongs to the set or not.
+    //use a Set if you only need to decide if something belongs to the set or not. 
 
     // List
     ArrayList arrayList;
@@ -26,14 +25,22 @@ public class Collections {
     EnumSet enumSet;
     CopyOnWriteArraySet copyOnWriteArraySet;
     ConcurrentSkipListSet concurrentSkipListSet;
-
+    
     // Map
     HashMap hashMap;
+    ConcurrentHashMap concurrentHashMap;
     LinkedHashMap linkedHashMap;
     TreeMap treeMap;
     Hashtable hashTable;
-
+    
     // Queue
     PriorityQueue priorityQueue;
     BlockingQueue blockingQueue;
+
+    //
+    Vector vector;
+
+    public static void collections() {
+        java.util.Collections.addAll(null);
+    }
 }

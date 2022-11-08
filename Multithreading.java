@@ -1,5 +1,8 @@
 
 public class Multithreading {
+    // THERE IS ALLOT MORE TO THREADS THAN THIS
+    //https://www.geeksforgeeks.org/java-multithreading-tutorial/
+    //https://www.netjstech.com/2015/05/java-advanced-topics.html
     public static void main(String[] args) {
         Extend object = new Extend();
         object.start();

@@ -1,4 +1,6 @@
+import java.util.Comparator;
 import java.util.function.*;
+import java.util.stream.Collectors;
 
 public class Interfaces {
     public static void main(String[] args) {
@@ -9,6 +11,7 @@ public class Interfaces {
         System.out.println(supplier());
         bi();
         System.out.println(methodParams(x -> x + 5, 5));
+        comparator();
     }   
 
     //***//Predicate//***//
@@ -109,5 +112,28 @@ public class Interfaces {
 
     public static <T, R> R methodParams(Function<T, R> f, T num) {
         return f.apply(num);
+    }
+
+    public static void collector() {
+        Collectors.toList(); // convert into List()
+        Collectors.toSet(); // convert into set()
+        Collectors.toCollection(null); // controls type of output 
+        Collectors.toMap(null, null); // convert into Map() 
+        Collectors.collectingAndThen(null, null); // performs operation on result after collecting into collection 
+        Collectors.counting(); // counts the number of input elements and returns a collector // used with groupingBy() 
+        Collectors.groupingBy(null); // groups duplicates into indexes // returns Map<String, List>
+        Collectors.joining(null); // concatenates the input elements into a string using delimiter // optional prefix and suffix
+        Collectors.mapping(null, null); // maps function to provided collection
+        Collectors.partitioningBy(null); // partitions the elements based on the predicate into list of true and false
+        Collectors.averagingDouble(null); // average of the input elements of type Double
+        Collectors.minBy(null); // gives minimal element
+    }
+
+    public static void comparator() {
+        Comparator<Integer> c = (a, b) -> a-b; // -1 less then, 0 equal, 1 greater then
+
+        System.out.println(c.compare(21, 32));
+        System.out.println(c.compare(13, 6));
+        System.out.println(c.compare(7, 7));
     }
 }

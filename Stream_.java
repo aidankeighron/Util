@@ -76,7 +76,7 @@ public class Stream_ {
         Stream.of(1); // returns a sequential stream containing a single element
         new ArrayList<>().stream().peek(null);
         new ArrayList<>().stream().reduce(null);
-        new ArrayList<>().stream().reduce(null, null); // reduced the stream to one value using the accumulator and the identity
+        new ArrayList<>().stream().reduce(null, null); // accumulator.apply(identity, value) for each element
         new ArrayList<>().stream().skip((Long) null); // skips n elements of the stream
         new ArrayList<>().stream().sorted(); // sort stream in natural order
         new ArrayList<>().stream().sorted(null); // sort stream according to comparator
