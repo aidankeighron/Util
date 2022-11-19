@@ -1,2 +1,3 @@
 https://www.netjstech.com/2015/05/java-advanced-topics.html
 https://enos.itcollege.ee/~jpoial/allalaadimised/reading/Advanced-java.pdf
+http://www.javapractices.com/home/HomeAction.do
