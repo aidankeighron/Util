@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    <main>
+      {% include header.html %}
+      <section class="article">
+        <div class="article-header">
+          <a class="language-title" href="{{site.baseurl}}/assets/Languages/{{page.language}}">
+              <h2 class="article-title">{{page.title}}</h2>
+          </a>
+        </div>
+        <div class="content">{{content}}</div>
+      </section>
+    </main>
+  </body>
+</html>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>

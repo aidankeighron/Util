@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang=""en>
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+    <section class="languages">
+      {% for script in page.scripts %}
+      <a href="{{site.baseurl}}/assets/{{page.title}}/{{script}}">
+
+        <article class="language">
+          <center>
+            <h2 class="language-title">
+              {{script}} 
+            </h2>
+          </article>
+        </center>
+      </a>
+      {% endfor %}
+    </section>
+  </body>
+</html>
