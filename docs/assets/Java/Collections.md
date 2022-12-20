@@ -1,6 +1,5 @@
 ---
 layout: script
-title: Collections
 language: Java
 ---
 

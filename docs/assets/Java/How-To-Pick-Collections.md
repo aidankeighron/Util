@@ -1,6 +1,5 @@
 ---
 layout: script
-title: How-To-Pick-Collections
 language: Java
 ---
 

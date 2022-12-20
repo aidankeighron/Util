@@ -4,10 +4,12 @@
   <body>
     <main>
       {% include header.html %}
+      {% assign languageFiles = page.path | split: '/' | last %}
+      {% assign script = languageFiles | split:'.md' %}
       <section class="article">
-        <div class="article-header">
+        <div class="article-header"> 
           <a class="language-title" href="{{site.baseurl}}/assets/Languages/{{page.language}}">
-              <h2 class="article-title">{{page.title}}</h2>
+              <h2 class="article-title">{{script}}</h2>
           </a>
         </div>
         <div class="content">{{content}}</div>
@@ -15,4 +17,3 @@
     </main>
   </body>
 </html>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>

@@ -1,6 +1,5 @@
 ---
 layout: script
-title: Stream
 language: Java
 ---
 
