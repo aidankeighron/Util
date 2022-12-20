@@ -1,16 +1,16 @@
 ---
 layout: script
-title: Class
+title: Classes
 language: Java
 ---
 
 ```java
-public class Class extends Object {
+public class Classes extends Object {
 
     private int var1;
     private String var2;
 
-    public Class(int var1, String var2) {
+    public Classes(int var1, String var2) {
         this.var1 = var1;
         this.var2 = var2;
     }
@@ -23,7 +23,7 @@ public class Class extends Object {
         return false;
       if (getClass() != obj.getClass())
           return false;
-      Class other = (Class) obj;
+      Classes other = (Classes) obj;
       if (var1 != other.var1)
         return false;
       if (var2 == null) {
