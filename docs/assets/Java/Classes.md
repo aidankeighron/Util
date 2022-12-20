@@ -1,6 +1,5 @@
 ---
 layout: script
-title: Classes
 language: Java
 ---
 

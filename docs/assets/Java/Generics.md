@@ -1,6 +1,5 @@
 ---
 layout: script
-title: Generics
 language: Java
 ---
 

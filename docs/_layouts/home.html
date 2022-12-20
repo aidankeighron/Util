@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang=""en>
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+    <section class="languages">
+      {% for page in site.pages %}
+        {% if page.path contains 'assets/Languages' %}
+          {% assign languageFiles = page.path | split:'/' | last %}
+          {% assign language = languageFiles | split:'.md' %}
+            <center>
+              <a href="{{site.baseurl}}/assets/Languages/{{language[0]}}"> 
+                <article class="language">
+                  <h2 class="language-title">
+                    {{language[0]}}
+                  </h2>
+                </article>
+              </a>
+            </center>
+        {% endif %}
+      {% endfor %}
+    </section>
+  </body>
+</html>

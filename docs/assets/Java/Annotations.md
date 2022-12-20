@@ -1,10 +1,9 @@
 ---
 layout: script
-title: Annotations
 language: Java
 ---
 
-```json
+```yaml
 Annotations applied to Java code:
 
   /**
