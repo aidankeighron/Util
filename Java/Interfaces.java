@@ -4,13 +4,13 @@ import java.util.stream.Collectors;
 
 public class Interfaces {
     public static void main(String[] args) {
-        System.out.println(predicateLambda("super long string"));
+        System.out.println(predicateLambda("super long string")); // true
         primitivePredicate();
         consumer();
         function();
-        System.out.println(supplier());
+        System.out.println(supplier()); // 10
         bi();
-        System.out.println(methodParams(x -> x + 5, 5));
+        System.out.println(methodParams(x -> x + 5, 5)); // 10
         comparator();
     }   
 
@@ -38,7 +38,7 @@ public class Interfaces {
 
     public static void primitivePredicate() {
         IntPredicate greater = i -> i > 10;
-        System.out.println(greater.test(12));
+        System.out.println(greater.test(12)); // true
     }
 
     //***//Consumer//***//
@@ -60,10 +60,10 @@ public class Interfaces {
         Consumer<Product> updatePrice = p -> p.setPrice(5.9);
         Product p = new Product();
         updatePrice.accept(p); // performs this operation on the given argument
-        p.printPrice();
+        p.printPrice(); // 5.9
         
         Consumer<Product> showPrice = s -> s.printPrice();
-        Consumer<Product> updateAndShow = updatePrice.andThen(showPrice); // performs passed in consumer after original consumer
+        Consumer<Product> updateAndShow = updatePrice.andThen(showPrice); // performs passed in consumer after original consumer // 5.9
         updateAndShow.accept(p);
     }
 
@@ -71,10 +71,10 @@ public class Interfaces {
     public static void function() {
         //IntToDoubleFunction
         Function<Integer, String> typeCast = val -> Integer.toString(val); // val -> val |TYPES| Integer -> String *NOTE does not automatically typecast
-        System.out.println(typeCast.apply(5).getClass());
+        System.out.println(typeCast.apply(5).getClass()); // class java.lang.String
         
         Function<Integer, Integer> square = val -> val * val;
-        System.out.println(square.apply(5));
+        System.out.println(square.apply(5)); // 25
 
         // f.andThen(Function) runs f first then param function
         // f.compose(Function) runs param function first then f
@@ -83,7 +83,7 @@ public class Interfaces {
         // When both generics of Function<> are the same type you can use UnaryOperator
         //IntUnaryOperator
         UnaryOperator<Double> increase = d -> d++;
-        System.out.println(increase.apply(5.2));
+        System.out.println(increase.apply(5.2)); // 5.2
     }
     
     //***//Supplier//***//
@@ -98,15 +98,15 @@ public class Interfaces {
     public static void bi() {
         //ObjIntConsumer
         BiConsumer<Integer, Double> sum = (i, d) -> System.out.println(i + d);
-        sum.accept(5, 2.3);
+        sum.accept(5, 2.3); // 7.3
 
         //ToIntBiFunction
         BiFunction<Integer, Integer, Double> divide = (x1, x2) -> (double)x1/x2;
-        System.out.println(divide.apply(5, 2));
+        System.out.println(divide.apply(5, 2)); // 2.5
 
         //IntBinaryOperator
         BinaryOperator<Integer> sub = (x1, x2) -> x1 - x2;
-        System.out.println(sub.apply(5, 2)); // returns Integer
+        System.out.println(sub.apply(5, 2)); // returns Integer // 3
 
     }
 
@@ -132,8 +132,8 @@ public class Interfaces {
     public static void comparator() {
         Comparator<Integer> c = (a, b) -> a-b; // -1 less then, 0 equal, 1 greater then
 
-        System.out.println(c.compare(21, 32));
-        System.out.println(c.compare(13, 6));
-        System.out.println(c.compare(7, 7));
+        System.out.println(c.compare(21, 32)); // -11
+        System.out.println(c.compare(13, 6)); // 7
+        System.out.println(c.compare(7, 7)); // 0
     }
 }

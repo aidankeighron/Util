@@ -66,6 +66,12 @@ public static void main(String[] args)
             file.close();
   
             System.out.println("Data before Deserialization.");
+            /*
+            name = ab
+            age = 20 
+            a = 2    
+            b = 1000 
+             */
             printData(object);
   
             // value of static variable changed
@@ -91,6 +97,12 @@ public static void main(String[] args)
             file.close();
             System.out.println("Data after Deserialization.");
             printData(object); 
+            /*
+            name = ab
+            age = 20
+            a = 0
+            b = 2000
+             */
         }
   
         catch (Exception e) {

@@ -61,7 +61,7 @@ public class Collections {
         arrayList.add(4);
         arrayList.add(1);
         arrayList.remove(2);
-        System.out.println(arrayList);
+        System.out.println(arrayList); // [13, 7, 1]
     }
 
     // Linked List //
@@ -72,7 +72,7 @@ public class Collections {
         linkedList.add("are fast");
         linkedList.add("for adding");
         linkedList.removeFirst();
-        System.out.println(linkedList);
+        System.out.println(linkedList); // [lists, are fast, for adding]
     }
 
     // Vector //
@@ -83,7 +83,7 @@ public class Collections {
         vector.add(4.1);
         vector.add(6.2);
         vector.remove(2);
-        System.out.println(vector);
+        System.out.println(vector); // [0.5, 2.7, 6.2]
     }
 
     // Stack //
@@ -94,13 +94,13 @@ public class Collections {
         stack.push("really");
         stack.push("cool");
         Iterator<String> itr = stack.iterator(); // Fail-fast
-        while(itr.hasNext()) {
-            System.out.print(itr.next()+" ");
+        while(itr.hasNext()) { // Java is really cool
+            System.out.print(itr.next()+" "); 
         }
         System.out.println();
         stack.pop();
         itr = stack.iterator();
-        while (itr.hasNext()) {
+        while (itr.hasNext()) { // Java is really
             System.out.print(itr.next() + " ");
         }
         System.out.println();
@@ -115,13 +115,13 @@ public class Collections {
         arrayDeque.push("cool");
         // Stack .getFirst() .pop()
         Iterator<String> itr = arrayDeque.descendingIterator(); // Fail-fast
-        while(itr.hasNext()) {
+        while(itr.hasNext()) { // Java is really cool
             System.out.print(itr.next()+" ");
         }
         System.out.println();
         // Queue .getLast() .poll()
         itr = arrayDeque.iterator();
-        while (itr.hasNext()) {
+        while (itr.hasNext()) { // cool really is Java
             System.out.print(itr.next() + " ");
         }
         System.out.println();
@@ -145,7 +145,7 @@ public class Collections {
         priorityQueue.add(1.2);
         priorityQueue.add(5.6);
         priorityQueue.add(4.3);
-        System.out.println(priorityQueue.peek());
+        System.out.println(priorityQueue.peek()); // 0.7
     }
 
     // Hash Set //
@@ -158,9 +158,10 @@ public class Collections {
         hashSet.add("fun");
 
         Iterator<String> itr = hashSet.iterator(); // Fail-fast
-        while (itr.hasNext()) {
-            System.out.println(itr.next());
+        while (itr.hasNext()) { // very Programming is fun
+            System.out.print(itr.next() + " ");
         }
+        System.out.println();
     }
 
     // Tree Set //
@@ -173,11 +174,12 @@ public class Collections {
         treeSet.add(2);
         treeSet.add(2);
         Iterator<Integer> itr = treeSet.iterator();
-        while ( itr.hasNext()) {
-            System.out.println(itr.next());
+        while ( itr.hasNext()) { // 1 2 3 5 7
+            System.out.print(itr.next() + " ");
         }
-        System.out.println(treeSet.ceiling(4));
-        System.out.println(treeSet.headSet(5));
+        System.out.println();
+        System.out.println(treeSet.ceiling(4)); // 5
+        System.out.println(treeSet.headSet(5)); // [1, 2, 3]
     }
 
     // Hash Map //
@@ -187,10 +189,15 @@ public class Collections {
         hashMap.put(5, "is");
         hashMap.put(7, "programming");
 
-        System.out.println(hashMap.get(1));
+        System.out.println(hashMap.get(1)); // Java
 
         for (Map.Entry<Integer, String> e : hashMap.entrySet())
             System.out.println(e.getKey() + " " + e.getValue());
+        /*
+        1 Java
+        5 is
+        7 programming
+         */
     }
 
     // Enum Set //
@@ -204,10 +211,10 @@ public class Collections {
         set3 = EnumSet.allOf(Code.class);
         set4 = EnumSet.range(Code.CODE, Code.CONTRIBUTE);
  
-        System.out.println("Set 1: " + set1);
-        System.out.println("Set 2: " + set2);
-        System.out.println("Set 3: " + set3);
-        System.out.println("Set 4: " + set4);
+        System.out.println("Set 1: " + set1); // Set 1: [CODE, LEARN, CONTRIBUTE, QUIZ]
+        System.out.println("Set 2: " + set2); // Set 2: [MCQ]
+        System.out.println("Set 3: " + set3); // Set 3: [CODE, LEARN, CONTRIBUTE, QUIZ, MCQ]
+        System.out.println("Set 4: " + set4); // Set 4: [CODE, LEARN, CONTRIBUTE]
     }
 
     // Delay Queue //
@@ -255,8 +262,22 @@ public class Collections {
         delayQueue.add(new DelayObject("D", 4));
 
         System.out.println("DelayQueue: "+delayQueue);
+        /*
+        DelayQueue: [
+        {name=A, time=1671559741751},
+        {name=B, time=1671559741752},
+        {name=C, time=1671559741753},
+        {name=D, time=1671559741754}]
+         */
         BlockingQueue<DelayObject> DQ2 = new DelayQueue<DelayObject>(delayQueue);
         System.out.println("DelayQueue: "+DQ2);
+        /*
+        DelayQueue: [
+        {name=A, time=1671559741751},
+        {name=B, time=1671559741752},
+        {name=C, time=1671559741753},
+        {name=D, time=1671559741754}]
+         */
     }
 
     public static void collections() {
