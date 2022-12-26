@@ -43,6 +43,14 @@ except Exception as e:
 
 print('# or #')# or #
 
+a = True
+b = False
+print(a or b) # True
+lang = None or 'Python'
+print(lang) # Python
+lang = 'Java' or 'Python'
+print(lang) # Java
+
 print('# floor and modulo #')# floor and modulo #
 
 # floor

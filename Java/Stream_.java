@@ -11,7 +11,7 @@ public class Stream_ {
         // demonstration of map method
         List<Integer> square = number.stream().map(x -> x*x).
                             collect(Collectors.toList());
-        System.out.println(square);
+        System.out.println(square); // [4, 9, 16, 25]
     
         // create a list of String
         List<String> names =
@@ -20,12 +20,12 @@ public class Stream_ {
         // demonstration of filter method
         List<String> result = names.stream().filter(s->s.startsWith("S")).
                             collect(Collectors.toList());
-        System.out.println(result);
+        System.out.println(result); // [Stream]
     
         // demonstration of sorted method
         List<String> show =
                 names.stream().sorted().collect(Collectors.toList());
-        System.out.println(show);
+        System.out.println(show); // [Collection, Reflection, Stream]
     
         // create a list of integers
         List<Integer> numbers = Arrays.asList(2,3,4,5,2);
@@ -33,18 +33,21 @@ public class Stream_ {
         // collect method returns a set
         Set<Integer> squareSet =
             numbers.stream().map(x->x*x).collect(Collectors.toSet());
-        System.out.println(squareSet);
+        System.out.println(squareSet); // [16, 4, 9, 25]
     
         // demonstration of forEach method
-        number.stream().map(x->x*x).forEach(y->System.out.println(y));
+        number.stream().map(x->x*x).forEach(y->System.out.println(y));  // 4
+                                                                        // 9
+                                                                        // 16
+                                                                        // 25
     
         // demonstration of reduce method
         int even =
         number.stream().filter(x->x%2==0).reduce(0,(ans,i)-> ans+i); // Sum of even
         int evenbetter = number.stream().filter(x->x%2==0).reduce(0, Integer::sum);
     
-        System.out.println(even);
-        System.out.println(evenbetter);
+        System.out.println(even); // 6
+        System.out.println(evenbetter); // 6
     }
 
     public static void interfaces() {

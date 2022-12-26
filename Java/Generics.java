@@ -10,26 +10,26 @@ public class Generics<A> {
         List<Integer> genericMethodInt = g.genericMethod(new Integer[]{0, 1, 2, 3, 4, 5});
         List<Double> genericMethodDouble = g.genericMethod(new Double[]{0.1, 1.5, 2.7, 3.2, 4.8, 5.6});
 
-        System.out.println("Integer");
-        for (Integer integer : genericMethodInt)
+        System.out.print("Integer: ");
+        for (Integer integer : genericMethodInt) // 0 1 2 3 4 5
             System.out.print(integer + " ");
         System.out.println();
-        System.out.println("Double");
-        for (Double integer : genericMethodDouble)
-            System.out.print(integer + " ");
+        System.out.print("Double: ");
+        for (Double integer : genericMethodDouble) // 0.1 1.5 2.7 3.2 4.8 5.6
+        System.out.print(integer + " ");
+        System.out.println();
 
         // array to list
-        System.out.println();
-        System.out.println("Sqrt");
+        System.out.print("Sqrt: ");
         Integer[] array = {1, 4, 9, 16};
         Function<Integer, Double> sqrt = a -> Math.sqrt(a);
         List<Double> result = g.fromArrayToList(array, sqrt);
-        result.forEach(e -> System.out.print(e + " "));
+        result.forEach(e -> System.out.print(e + " ")); // 1.0 2.0 3.0 4.0
 
-        g.fromArrayToList(new Integer[]{1, 2, 3, 4, 5}); // number
+        g.fromArrayToList(new Integer[]{1, 2, 3, 4, 5}); // parameter extends Number
 
-        //g.multipleBounds("Wrong Type"); // error
-        g.multipleBounds(1); // number
+        //g.multipleBounds("Wrong Type"); // error // parameter does not extend bounds
+        g.multipleBounds(1); // parameter extends Number
 
 
         g.upperBoundWildcards(new ArrayList<String>()); // String is hight than Object
