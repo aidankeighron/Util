@@ -1,3 +1,9 @@
+---
+layout: script
+language: Python
+---
+
+```python
 square = lambda x: x * x
 print(square(4)) # 16
 
@@ -11,3 +17,4 @@ print(square_list) # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 
 max = lambda a, b: a if a > b else b
 print(max(7, 4)) # 7
+```
