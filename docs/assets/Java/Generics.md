@@ -3,6 +3,8 @@ layout: script
 language: Java
 ---
 
+Generics are used to specify a range of types an input can be. They are commonly used in libraries to help with code readability and type safety. It is good practice to use generics when possible.
+
 ```java
 import java.util.*;
 import java.util.function.Function;

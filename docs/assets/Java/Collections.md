@@ -3,6 +3,8 @@ layout: script
 language: Java
 ---
 
+This is a list of the most common Java collections. It is best to each collection for its intended uses as they each have a specialty. While recommended it is not necessary to use the best possible collection for a task as the performance gains may be minimal. It is best to use the collections you are comfortable with and know the most about.
+
 ```java
 import java.util.*;
 import java.util.concurrent.*;

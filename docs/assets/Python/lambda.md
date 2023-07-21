@@ -3,6 +3,8 @@ layout: script
 language: Python
 ---
 
+Lambda expressions are used to simplify expressions and make them shorter. They are useful when needing to modify every index of a list or when needing to access nested data. Lambda expressions have numerous applications and their flexibility makes them slot in nicely to existing code.
+
 ```python
 square = lambda x: x * x
 print(square(4)) # 16
@@ -17,4 +19,9 @@ print(square_list) # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 
 max = lambda a, b: a if a > b else b
 print(max(7, 4)) # 7
+
+numbers = [[3, 5], [7, 9], [1, 2]]
+# Find largest second index and return the whole list
+largest = max(numbers, key=lambda x: x[1])
+print(largest) # [7, 9]
 ```

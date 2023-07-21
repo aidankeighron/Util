@@ -3,6 +3,8 @@ layout: script
 language: Python
 ---
 
+Magic methods are ways to enhance classes and give them more functionality. They can be use to modify every aspect of a class and how it interacts with other objects. You can modify everything from how addition works to what happens when you try to get the length of it.
+
 ```python
 class magic_methods:
     

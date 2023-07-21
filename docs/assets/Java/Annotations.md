@@ -3,6 +3,8 @@ layout: script
 language: Java
 ---
 
+Annotations are used above classes and methods to document code. They are best used in libraries or shared code. They make code easy to understand but can be tedious to use on large projects.
+
 ```yaml
 Annotations applied to Java code:
 
