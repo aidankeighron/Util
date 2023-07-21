@@ -3,6 +3,8 @@ layout: script
 language: Python
 ---
 
+Decorators are used to add extra functionality onto existing methods.
+
 ```python
 def square(fn):
     def wrapper(*args, **kwargs):

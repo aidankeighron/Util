@@ -3,6 +3,8 @@ layout: script
 language: Java
 ---
 
+Streams can make modifying collections trivial. They are used to apply operations to the list itself or each index. Be careful when chaining multiple operations together as this can make code difficult to read.
+
 ```java
 //a simple program to demonstrate the use of stream in java
 import java.util.*;

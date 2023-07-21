@@ -9,7 +9,13 @@ def addition(*args):
 
 print(addition(1, 2, 3, 4, 5)) # 15
 
-# 
+def add(a, b):
+    return a, b
+
+nums = [2, 3]
+print(add(*nums)) # 5
+
+# Variable length parameters
 def languages(**kwargs):
     for item in kwargs:
         print(item) # functional # object_oriented
@@ -24,3 +30,6 @@ def add(x, y):
     return x + y
 
 print(add(*nums)) # 11
+
+# Exponent
+print(2**3) # 8
