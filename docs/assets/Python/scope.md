@@ -3,7 +3,7 @@ layout: script
 language: Python
 ---
 
-Scope is all about what variables you can access and when. Global variables (variables outside of any method) can be read from inside methods but need the global keyword to be written too. The same goes for local variables in the context of nested methods.
+Scope is all about what variables you can access and when. Global variables (variables outside of any method) can be read from inside methods but need the global keyword to be written to. The same goes for local variables in the context of nested methods.
 
 ```python
 print("global scope")# global scope #

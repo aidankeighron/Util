@@ -26,8 +26,7 @@ Points to remember
 Example :
  */
 class Emp implements Serializable {
-private static final long serialversionUID =
-                                 129348938L;
+private static final long serializationUID = 129348938L;
     transient int a;
     static int b;
     String name;

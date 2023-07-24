@@ -3,7 +3,7 @@ layout: script
 language: Python
 ---
 
-Lambda expressions are used to simplify expressions and make them shorter. They are useful when needing to modify every index of a list or when needing to access nested data. Lambda expressions have numerous applications and their flexibility makes them slot in nicely to existing code.
+Lambda expressions are used to simplify expressions and make them shorter. They are useful when needing to modify every index of a list or when needing to access nested data. Lambda expressions have numerous applications and their flexibility lets them slot in nicely to existing code.
 
 ```python
 square = lambda x: x * x

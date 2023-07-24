@@ -3,7 +3,7 @@ layout: script
 language: Python
 ---
 
-`is` is used to check if two variables are at the same object. Often used to check if a variable is `None`.
+`is` is used to check if two variables are the same object. Often used to check if a variable is `None`.
 
 ```python
 import math
@@ -26,7 +26,7 @@ b = a
 print(a is not b) # False
 ```
 
-`and` is can be used to make sure a variable has a valid value before performing a operation. Valid value meaning not 0, an empty list, or None.
+`and` can be used to make sure a variable has a valid value before performing a operation. Valid value meaning not 0, an empty list, or None.
 
 ```python
 print('# and #')# and #
