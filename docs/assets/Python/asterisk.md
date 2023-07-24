@@ -3,7 +3,7 @@ layout: script
 language: Python
 ---
 
-Asterisks are used to unpack lists, make variable parameters, and exposition. I find that they are most commonly used for exponents or to split an x/y coordinate list into individual components.
+Asterisks are used to unpack lists, make variable parameters, and exposition. I find that they are most commonly used for exponents or to split an x/y coordinate list into individual components. When unpacking lists it essentially maps each index to an input on the method in the order they occur.
 
 ```python
 # unpacking a function
