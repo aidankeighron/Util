@@ -3,7 +3,7 @@ layout: script
 language: Python
 ---
 
-Decorators are used to add extra functionality onto existing methods.
+Decorators are used to add extra functionality onto existing methods. They act as an extra steps either before or after the method call. It essentially allows you to modify the inputs or outputs before they are passed into the method or after they come out of the method respectively.
 
 ```python
 def square(fn):
