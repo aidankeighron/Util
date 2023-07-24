@@ -3,7 +3,7 @@ layout: script
 language: Java
 ---
 
-Interfaces are powerful tools to modulate your code. They allow for methods to become variables and be passed in to other methods as parameters. Using lambda expressions interfaces can be shortened to one liners making code clear an concise.
+Interfaces are powerful tools to modulate your code. They allow for methods to become variables and be passed in to other methods as parameters. Using lambda expressions interfaces can be shortened to one liners making code clear and concise.
 
 ```java
 import java.util.Comparator;
