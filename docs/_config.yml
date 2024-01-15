@@ -20,7 +20,7 @@
 
 title: Util
 baseurl: "/Util" # the subpath of your site, e.g. /blog
-url: "https://swervyk.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://aidankeighron.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 markdown: kramdown
 
 # Build settings
@@ -28,6 +28,7 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# image: ruby:3.1
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
