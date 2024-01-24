@@ -1,3 +1,13 @@
+---
+layout: script
+language: Algorithms
+---
+
+# Fibonacci Numbers
+
+Calculates the first `n` fibonacci numbers.
+
+```python
 def fibonacci(n):
 
     if n == 0:
@@ -6,5 +16,5 @@ def fibonacci(n):
     for _ in range(n-1):
         fib.append(fib[-1]+fib[-2])
     return fib
+```
 
-print(fibonacci(6))
