@@ -6,11 +6,6 @@ language: Python
 Asterisks are used to unpack lists, make variable parameters, and exponentiation. I find that they are most commonly used for exponents or to split an x/y coordinate list into individual components. When unpacking lists it essentially maps each index to an input on the method in the order they occur.
 
 ```python
-# unpacking a function
-nums = [0, 5, 7, 2]
-print(nums) # [0, 5, 7, 2]
-print(*nums) # 0 5 7 2
-
 # arbitrary number of function parameters for non-key arguments and variable-length argument lists
 # unpacking a function
 nums = [0, 5, 7, 2]
@@ -38,7 +33,7 @@ def languages(**kwargs):
         
 languages(functional = 'F#', object_oriented = 'java')
 language = {'functional': 'F#', 'object_oriented': 'java'}
-languages(**language)
+languages(**language) # Same output as previous line
 
 nums = [5, 6]
 def add(x, y):

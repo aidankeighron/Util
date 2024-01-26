@@ -1,10 +1,9 @@
-def fibonacci(n):
-
-    if n == 0:
-        return [0]
-    fib = [0, 1]
-    for _ in range(n-1):
-        fib.append(fib[-1]+fib[-2])
-    return fib
-
-print(fibonacci(6))
+# Variable length parameters
+def languages(**kwargs):
+    for item in kwargs:
+        print(item) # functional # object_oriented
+        print(kwargs[item]) # F# # java
+        
+languages(functional = 'F#', object_oriented = 'java')
+language = {'functional': 'F#', 'object_oriented': 'java'}
+languages(**language) # Same output as previous line
