@@ -8,7 +8,7 @@ language: Algorithms
 Calculates the first `n` fibonacci numbers.
 
 ```python
-def fibonacci(n):
+def fibonacci(n: int) -> list:
 
     if n == 0:
         return [0]
@@ -23,7 +23,7 @@ def fibonacci(n):
 Finds the longest common substring between two strings.
 
 ```python
-def longest_common_substring(string1, string2):
+def longest_common_substring(string1: str, string2: str) -> str:
     string1_len = len(string1)
     string2_len = len(string2)
 
@@ -57,4 +57,23 @@ dp = [
 ]
 
 output = "abc"
+```
+
+# Knapsack
+
+Finds the max value that can be put into the knapsack taking into account the capacity and weights of the objects. I uses recursion to find if an object can be put in the knapsack optimally or if it needs to be omitted.
+
+```python
+def knapsack(capacity: int, weights: list, values: list, counter: int) -> int:
+
+    if capacity == 0 or counter == 0:
+        return 0
+
+    if weights[counter - 1] > capacity:
+        return knapsack(capacity, weights, values, counter - 1)
+    else:
+        left_capacity = capacity - weights[counter - 1]
+        new_value = values[counter - 1] + knapsack(left_capacity, weights, values, counter - 1)
+        without_value = knapsack(capacity, weights, values, counter - 1)
+        return max(new_value, without_value)
 ```

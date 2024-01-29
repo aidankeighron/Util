@@ -8,7 +8,7 @@ language: Algorithms
 Find the index of a item in a sorted list.
 
 ```python
-def search(sorted_list, target):
+def search(sorted_list: list, target: int) -> list:
     left, right = 0, len(sorted_list)-1
     while left <= right:
         midpoint = left + (right - left) // 2
@@ -51,7 +51,7 @@ Searching algorithm that used the fibonacci sequence to narrow search range.
 from functools import lru_cache
 
 @lru_cache
-def fibonacci(k):
+def fibonacci(k: int):
     if k == 0:
         return 0
     if k == 1:
@@ -59,7 +59,7 @@ def fibonacci(k):
     else:
         return fibonacci(k - 1) + fibonacci(k - 2)
 
-def fibonacci_search(arr, target):
+def fibonacci_search(arr: list, target: int) -> int:
     i = 0
     len_list = len(arr)
     while True:

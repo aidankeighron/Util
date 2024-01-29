@@ -8,7 +8,7 @@ language: Algorithms
 Moves all the largest elements to the right
 
 ```python
-def bubble_sort(collection):
+def bubble_sort(collection: list) -> list:
     length = len(collection)
 
     for i in reversed(range(length)):
@@ -44,7 +44,7 @@ Quick sort uses a pivot and sorts all greater numbers to the right of the pivot 
 ```python
 from random import randrange
 
-def quick_sort(collection):
+def quick_sort(collection: list) -> list:
     length = len(collection)
 
     if length < 2:
