@@ -1,16 +1,16 @@
-def knapsack(capacity: int, weights: list, values: list, counter: int) -> int:
+def minimum_cost_path(matrix: list[list]) -> int:
+    # first row
+    for i in range(1, len(matrix[0])):
+        matrix[0][i] += matrix[0][i-1]
 
-    if capacity == 0 or counter == 0:
-        return 0
+    # first column
+    for i in range(1, len(matrix)):
+        matrix[i][0] += matrix[i-1][0]
 
-    if weights[counter - 1] > capacity:
-        return knapsack(capacity, weights, values, counter - 1)
-    else:
-        left_capacity = capacity - weights[counter - 1]
-        new_value = values[counter - 1] + knapsack(left_capacity, weights, values, counter - 1)
-        without_value = knapsack(capacity, weights, values, counter - 1)
-        return max(new_value, without_value)
-val = [60, 100, 120]
-w = [10, 20, 30]
-c = len(val)
-print(knapsack(50, w, val, c))
+    for i in range(1, len(matrix)):
+        for j in range(1, len(matrix[0])):
+            matrix[i][j] += min(matrix[i-1][j], matrix[i][j-1])
+
+    return matrix[-1][-1]
+
+print(minimum_cost_path([[1, 10, 10], [1, 10, 1], [1, 100, 1]]))

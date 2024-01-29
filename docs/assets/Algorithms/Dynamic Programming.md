@@ -77,3 +77,24 @@ def knapsack(capacity: int, weights: list, values: list, counter: int) -> int:
         without_value = knapsack(capacity, weights, values, counter - 1)
         return max(new_value, without_value)
 ```
+
+# Minimum Cost Path
+
+Find the lowest "cost" from top left of a matrix to the bottom right. This works by choosing to either move down or right depending on the lowest cost.
+
+```python
+def minimum_cost_path(matrix: list[list]) -> int:
+    # first row
+    for i in range(1, len(matrix[0])):
+        matrix[i][i] += matrix[0][i-1]
+
+    # first column
+    for i in range(1, len(matrix)):
+        matrix[i][0] += matrix[i - 1][0]
+
+    for i in range(1, len(matrix)):
+        for j in range(1, len(matrix[0])):
+            matrix[i][j] += min(matrix[i-1][j], matrix[i][j-1])
+
+    return matrix[-1][-1]
+```
