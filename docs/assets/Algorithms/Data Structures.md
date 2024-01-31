@@ -26,3 +26,4 @@ def permutations(collection: list) -> list:
 
     return res
 ```
+
