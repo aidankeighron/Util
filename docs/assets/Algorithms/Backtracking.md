@@ -1,3 +1,13 @@
+---
+layout: script
+language: Algorithms
+---
+
+# Combination Sum
+
+Using backtracking we find all possible combinations of the collection that sum up to target.
+
+```python
 def combination_sum(collection: list, target: int) -> list:
     answer = []
     current = []
@@ -12,5 +22,4 @@ def combination_sum(collection: list, target: int) -> list:
                 current.pop()
     backtrack(target, 0)
     return answer
-
-print(combination_sum([2, 3, 5], 8))
+```
