@@ -1,22 +1,10 @@
 ## Backtracking
-  * [All Combinations](backtracking/all_combinations.py)
   * [All Permutations](backtracking/all_permutations.py)
   * [All Subsequences](backtracking/all_subsequences.py)
-  * [Coloring](backtracking/coloring.py)
-  * [Combination Sum](backtracking/combination_sum.py)
-  * [Crossword Puzzle Solver](backtracking/crossword_puzzle_solver.py)
   * [Generate Parentheses](backtracking/generate_parentheses.py)
-  * [Hamiltonian Cycle](backtracking/hamiltonian_cycle.py)
-  * [Knight Tour](backtracking/knight_tour.py)
   * [Match Word Pattern](backtracking/match_word_pattern.py)
-  * [Minimax](backtracking/minimax.py)
-  * [N Queens](backtracking/n_queens.py)
-  * [N Queens Math](backtracking/n_queens_math.py)
   * [Power Sum](backtracking/power_sum.py)
-  * [Rat In Maze](backtracking/rat_in_maze.py)
-  * [Sudoku](backtracking/sudoku.py)
   * [Sum Of Subsets](backtracking/sum_of_subsets.py)
-  * [Word Search](backtracking/word_search.py)
 
 ## Bit Manipulation
   * [Binary And Operator](bit_manipulation/binary_and_operator.py)
