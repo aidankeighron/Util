@@ -1,17 +1,18 @@
-def all_subsequences(sequence: list) -> list:
-    answer = []
-    def backtrack(current, index):
+def generate_parentheses(n: int) -> list:
+    result = []
 
-        if index == len(sequence):
-            answer.append(current.copy())
+    def backtrack(num_open, num_closed, current):
+        if len(current) == 2 * n:
+            result.append(current)
             return
 
-        backtrack(current, index+1)
-        current.append(sequence[index])
-        backtrack(current, index+1)
-        current.pop(0)
+        if num_open < n:
+            backtrack(num_open + 1, num_closed, current + "(")
+        
+        if num_closed < num_open:
+            backtrack(num_open, num_closed + 1, current + ")")
 
-    backtrack([], 0)
-    return answer
+    backtrack(0, 0, "")
+    return result
 
-print(all_subsequences([2, 3, 5]))
+print(generate_parentheses(2))

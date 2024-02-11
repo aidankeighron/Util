@@ -1,7 +1,5 @@
 ## Backtracking
-  * [All Permutations](backtracking/all_permutations.py)
   * [All Subsequences](backtracking/all_subsequences.py)
-  * [Generate Parentheses](backtracking/generate_parentheses.py)
   * [Match Word Pattern](backtracking/match_word_pattern.py)
   * [Power Sum](backtracking/power_sum.py)
   * [Sum Of Subsets](backtracking/sum_of_subsets.py)
