@@ -1,18 +1,16 @@
-def generate_parentheses(n: int) -> list:
+def sum_of_subsets(numbers: list, target_sum: int) -> list:
     result = []
 
-    def backtrack(num_open, num_closed, current):
-        if len(current) == 2 * n:
-            result.append(current)
+    def backtrack(i, path, remaining_sum):
+        if sum(path) > target_sum or (remaining_sum + sum(path)) < target_sum:
             return
+        if sum(path) == target_sum:
+            result.append(path.copy())
+            return
+        for j in range(i, len(numbers)):
+            backtrack(j+1, [*path, numbers[j]], remaining_sum - numbers[j])
 
-        if num_open < n:
-            backtrack(num_open + 1, num_closed, current + "(")
-        
-        if num_closed < num_open:
-            backtrack(num_open, num_closed + 1, current + ")")
-
-    backtrack(0, 0, "")
+    backtrack(0, [], sum(numbers))
     return result
 
-print(generate_parentheses(2))
+print(sum_of_subsets([3, 34, 4, 12, 5, 2], 9))
