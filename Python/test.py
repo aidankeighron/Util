@@ -1,16 +1,21 @@
-def sum_of_subsets(numbers: list, target_sum: int) -> list:
-    result = []
+def power_sum(needed_sum: int, power: int) -> int:
+    result = 0
 
-    def backtrack(i, path, remaining_sum):
-        if sum(path) > target_sum or (remaining_sum + sum(path)) < target_sum:
+    def backtrack(current_sum, current_num):
+        nonlocal result
+        if current_sum == needed_sum:
+            result += 1
             return
-        if sum(path) == target_sum:
-            result.append(path.copy())
-            return
-        for j in range(i, len(numbers)):
-            backtrack(j+1, [*path, numbers[j]], remaining_sum - numbers[j])
 
-    backtrack(0, [], sum(numbers))
+        next_num = current_num ** power
+        if current_sum + next_num <= needed_sum:
+            current_sum += next_num
+            backtrack(current_sum, current_num+1)
+            current_sum -= next_num
+        if next_num < needed_sum:
+            backtrack(current_sum, current_num+1)
+
+    backtrack(0, 1)
     return result
 
-print(sum_of_subsets([3, 34, 4, 12, 5, 2], 9))
+print(power_sum(13, 2))

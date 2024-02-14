@@ -1,8 +1,6 @@
 ## Backtracking
-  * [All Subsequences](backtracking/all_subsequences.py)
   * [Match Word Pattern](backtracking/match_word_pattern.py)
   * [Power Sum](backtracking/power_sum.py)
-  * [Sum Of Subsets](backtracking/sum_of_subsets.py)
 
 ## Bit Manipulation
   * [Binary And Operator](bit_manipulation/binary_and_operator.py)

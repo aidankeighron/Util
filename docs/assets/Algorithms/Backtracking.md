@@ -115,3 +115,29 @@ def sum_of_subsets(numbers: list, target_sum: int) -> list:
     backtrack(0, [], sum(numbers))
     return result
 ```
+
+# Power Sum
+
+Finds the number of ways that `needed_sum` can be expressed as the sum of number to the nth `power`. Example: If `needed_sum = 13` and `power = 2` there is 1 way to get 13, `2^2 + 3^2 = 4 + 9 = 13`.
+
+```python
+def power_sum(needed_sum: int, power: int) -> int:
+    result = 0
+
+    def backtrack(current_sum, current_num):
+        nonlocal result
+        if current_sum == needed_sum:
+            result += 1
+            return
+
+        next_num = current_num ** power
+        if current_sum + next_num <= needed_sum:
+            current_sum += next_num
+            backtrack(current_sum, current_num+1)
+            current_sum -= next_num
+        if next_num < needed_sum:
+            backtrack(current_sum, current_num+1)
+
+    backtrack(0, 1)
+    return result
+```
