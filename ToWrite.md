@@ -1,6 +1,3 @@
-## Backtracking
-  * [Match Word Pattern](backtracking/match_word_pattern.py)
-
 ## Bit Manipulation
   * [Binary And Operator](bit_manipulation/binary_and_operator.py)
   * [Binary Coded Decimal](bit_manipulation/binary_coded_decimal.py)
