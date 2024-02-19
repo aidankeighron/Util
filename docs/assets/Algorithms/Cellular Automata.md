@@ -1,3 +1,13 @@
+---
+layout: script
+language: Algorithms
+---
+
+# Conway's Game Of Life
+
+Implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) in python.
+
+```python
 def new_generation(cells: list) -> list:
     next_generation = []
     for i in range(len(cells)):
@@ -16,7 +26,4 @@ def new_generation(cells: list) -> list:
                     (not cells[i][j] and neighbor_count == 3)))
         next_generation.append(next_generation_row)
     return next_generation
-        
-        
-BLINKER = [[0, 1, 0], [0, 1, 0], [0, 1, 0]]
-print(new_generation(BLINKER))
+```
