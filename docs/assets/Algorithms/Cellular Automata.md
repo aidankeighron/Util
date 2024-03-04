@@ -235,3 +235,62 @@ while True:
     write_text(f"Iteration: {iteration}", 5, 80, 14, screen)
     pg.display.flip()
 ```
+
+# Wa Tor
+
+```python
+import random
+def new_generation(grid: list) -> list:
+    new_grid = [[0] for _ in range(grid) for _ in range(grid[0])]
+    # for i, line in enumerate(grid):
+        # for j, index in enumerate(line):
+    coords = [(x,y) for x in range(grid[0]) for y in range(grid)]
+    random.shuffle(coords)
+    for i, j in coords:
+        # Nothing
+        if index[0] == 0:
+            continue
+        # Fish
+        if index[0] == 1:
+            options = [[1,0],[0,1],[-1,0],[0,-1]]
+            spaces = []
+            for x, y in options:
+                if grid[i+x][i+y] == 0 and new_grid[i+x][i+y] == 0:
+                    spaces.append([x,y])
+            if spaces:
+                space = random.choice(spaces)
+                if index[1]-1 <= 0:
+                    new_grid[*space] = [1, 5]
+                    new_grid[i, j] = [1, 5]
+                else:
+                    new_grid[*space] = [1, index[1]-1]
+            else:
+                new_grid[i, j] = [1, index[1]-1]
+        # Shark
+        if index[0] == 2:
+            if index[2] == 0:
+                # Shark dies
+                continue
+            options = [[1,0],[0,1],[-1,0],[0,-1]]
+            spaces = []
+            fish = False
+            for x, y in options:
+                if grid[i+x][i+y] == 1 and new_grid[i+x][i+y] == 1:
+                    spaces.append([x,y])
+                    fish = True
+            if not spaces:
+                for x, y in options:
+                    if grid[i+x][i+y] == 0 and new_grid[i+x][i+y] == 0:
+                        spaces.append([x,y])
+            if spaces:
+                space = random.choice(spaces)
+                if fish:
+                    index[2] += 5
+                if index[2]-1 <= 0:
+                    new_grid[*space] = [1, 20, index[2]-1]
+                    new_grid[i, j] = [1, 20, 15]
+                else:
+                    new_grid[*space] = [1, index[1]-1, index[2]-1]
+            else:
+                new_grid[i, j] = [1, index[1]-1]
+```
