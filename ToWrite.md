@@ -3,24 +3,6 @@
   * [Langtons Ant](cellular_automata/langtons_ant.py)
   * [Wa Tor](cellular_automata/wa_tor.py)
 
-## Compression
-  * [Burrows Wheeler](compression/burrows_wheeler.py)
-  * [Huffman](compression/huffman.py)
-  * [Lempel Ziv](compression/lempel_ziv.py)
-  * [Lempel Ziv Decompress](compression/lempel_ziv_decompress.py)
-  * [Lz77](compression/lz77.py)
-  * [Peak Signal To Noise Ratio](compression/peak_signal_to_noise_ratio.py)
-  * [Run Length Encoding](compression/run_length_encoding.py)
-
-## Computer Vision
-  * [Flip Augmentation](computer_vision/flip_augmentation.py)
-  * [Haralick Descriptors](computer_vision/haralick_descriptors.py)
-  * [Harris Corner](computer_vision/harris_corner.py)
-  * [Horn Schunck](computer_vision/horn_schunck.py)
-  * [Mean Threshold](computer_vision/mean_threshold.py)
-  * [Mosaic Augmentation](computer_vision/mosaic_augmentation.py)
-  * [Pooling Functions](computer_vision/pooling_functions.py)
-
 ## Data Structures
   * Arrays
     * [Equilibrium Index In Array](data_structures/arrays/equilibrium_index_in_array.py)
