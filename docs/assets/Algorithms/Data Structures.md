@@ -42,3 +42,15 @@ def equilibrium_index(arr: list) -> int:
         left_sum += value
     return -1
 ```
+
+## Product Sum
+
+Product sum of an array is the sum of the array multiplied by their depths
+
+```python
+def product_sum(arr: list, depth: int) -> int:
+    res = 0
+    for x in arr:
+        res += product_sum(x, depth+1) if isinstance(x, list) else x
+    return res * depth
+```
