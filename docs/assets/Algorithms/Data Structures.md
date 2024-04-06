@@ -54,3 +54,20 @@ def product_sum(arr: list, depth: int) -> int:
         res += product_sum(x, depth+1) if isinstance(x, list) else x
     return res * depth
 ```
+
+## Find Triplets with 0 Sum
+
+Finds three numbers that add up to zero by finding two and seeing if there exists a number that when added to them results in zero
+
+```python
+def find_triplets_with_0_sum(arr: list) -> set:
+    res = set()
+    for i, item in enumerate(arr[:-2]):
+        seen = set()
+        for other in arr[i+1:]:
+            to_find = -other-item
+            if to_find in seen:
+                res.add(tuple(sorted([item, other, to_find])))
+            seen.add(other)
+    return res
+```
