@@ -1,12 +1,26 @@
-def find_triplets_with_0_sum(arr: list) -> set:
-    res = set()
-    for i, item in enumerate(arr[:-2]):
-        seen = set()
-        for other in arr[i+1:]:
-            to_find = -other-item
-            if to_find in seen:
-                res.add(tuple(sorted([item, other, to_find])))
-            seen.add(other)
-    return res
+def kth_largest_element(arr: list, position: int) -> int:
+    low, high = 0, len(arr) - 1
 
-print(find_triplets_with_0_sum([-1, 0, 1, 2, -1, -4]))
+    def pivot_index():
+        pivot = arr[high]
+        i = low
+        for j in range(low, high):
+            if arr[j] >= pivot:
+                arr[i], arr[j] = arr[j], arr[i]
+                i += 1
+        arr[i], arr[high] = arr[high], arr[i]
+        return i
+
+    while low <= high:
+        print(arr)
+        if low > len(arr) - 1 or high < 0:
+            return -1
+        index = pivot_index()
+        if index == position - 1:
+            return arr[index]
+        elif index > position - 1:
+            high = index - 1
+        else:
+            low = index + 1
+
+print(kth_largest_element([3.1, 1.2, 5.6, 4.7,7.9,5,0], 2))
