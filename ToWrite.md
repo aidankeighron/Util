@@ -4,16 +4,6 @@
   * [Wa Tor](cellular_automata/wa_tor.py)
 
 ## Data Structures
-  * Arrays
-    * [Kth Largest Element](data_structures/arrays/kth_largest_element.py)
-    * [Median Two Array](data_structures/arrays/median_two_array.py)
-    * [Monotonic Array](data_structures/arrays/monotonic_array.py)
-    * [Pairs With Given Sum](data_structures/arrays/pairs_with_given_sum.py)
-    * [Permutations](data_structures/arrays/permutations.py)
-    * [Prefix Sum](data_structures/arrays/prefix_sum.py)
-    * [Product Sum](data_structures/arrays/product_sum.py)
-    * [Sparse Table](data_structures/arrays/sparse_table.py)
-    * [Sudoku Solver](data_structures/arrays/sudoku_solver.py)
   * Binary Tree
     * [Avl Tree](data_structures/binary_tree/avl_tree.py)
     * [Basic Binary Tree](data_structures/binary_tree/basic_binary_tree.py)

@@ -27,7 +27,7 @@ def permutations(collection: list) -> list:
     return res
 ```
 
-## Equilibrium Index in Array
+# Equilibrium Index in Array
 
 Find the index where the right and left sections of an array are equal in sum.
 
@@ -43,7 +43,7 @@ def equilibrium_index(arr: list) -> int:
     return -1
 ```
 
-## Product Sum
+# Product Sum
 
 Product sum of an array is the sum of the array multiplied by their depths
 
@@ -55,7 +55,7 @@ def product_sum(arr: list, depth: int) -> int:
     return res * depth
 ```
 
-## Find Triplets with 0 Sum
+# Find Triplets with 0 Sum
 
 Finds three numbers that add up to zero by finding two and seeing if there exists a number that when added to them results in zero
 
@@ -72,7 +72,7 @@ def find_triplets_with_0_sum(arr: list) -> set:
     return res
 ```
 
-## Kth Largest Element
+# Kth Largest Element
 
 Finds the `position` largest element in `arr`.
 
@@ -100,4 +100,26 @@ def kth_largest_element(arr: list, position: int) -> int:
             high = index - 1
         else:
             low = index + 1
-```     
+```
+
+# Binary Tree Node Sum
+
+Sums up all nodes in a binary tree
+
+```python
+from __future__ import annotations
+from dataclasses import dataclass
+
+@dataclass
+class Node:
+    value: int
+    left: Node | None = None
+    right: Node | None = None
+
+def binary_tree_sum(tree: Node) -> int:
+    def dfs(node):
+        if node is None:
+            return 0
+        return node.value + dfs(node.left) + dfs(node.right)
+    return dfs(tree)
+```

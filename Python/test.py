@@ -1,26 +1,21 @@
-def kth_largest_element(arr: list, position: int) -> int:
-    low, high = 0, len(arr) - 1
+from __future__ import annotations
+from dataclasses import dataclass
 
-    def pivot_index():
-        pivot = arr[high]
-        i = low
-        for j in range(low, high):
-            if arr[j] >= pivot:
-                arr[i], arr[j] = arr[j], arr[i]
-                i += 1
-        arr[i], arr[high] = arr[high], arr[i]
-        return i
+@dataclass
+class Node:
+    value: int
+    left: Node | None = None
+    right: Node | None = None
 
-    while low <= high:
-        print(arr)
-        if low > len(arr) - 1 or high < 0:
-            return -1
-        index = pivot_index()
-        if index == position - 1:
-            return arr[index]
-        elif index > position - 1:
-            high = index - 1
-        else:
-            low = index + 1
+def binary_tree_sum(tree: Node) -> int:
+    def dfs(node):
+        if node is None:
+            return 0
+        return node.value + dfs(node.left) + dfs(node.right)
+    return dfs(tree)
 
-print(kth_largest_element([3.1, 1.2, 5.6, 4.7,7.9,5,0], 2))
+tree1 = Node(10)
+tree1.left = Node(5)
+tree1.right = Node(-2)
+
+print(binary_tree_sum(tree1))
