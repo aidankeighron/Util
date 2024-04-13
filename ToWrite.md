@@ -11,7 +11,6 @@
     * [Binary Search Tree Recursive](data_structures/binary_tree/binary_search_tree_recursive.py)
     * [Binary Tree Mirror](data_structures/binary_tree/binary_tree_mirror.py)
     * [Binary Tree Traversals](data_structures/binary_tree/binary_tree_traversals.py)
-    * [Diameter Of Binary Tree](data_structures/binary_tree/diameter_of_binary_tree.py)
     * [Diff Views Of Binary Tree](data_structures/binary_tree/diff_views_of_binary_tree.py)
     * [Distribute Coins](data_structures/binary_tree/distribute_coins.py)
     * [Fenwick Tree](data_structures/binary_tree/fenwick_tree.py)
