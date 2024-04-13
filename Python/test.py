@@ -7,42 +7,24 @@ class Node:
     left: Node | None = None
     right: Node | None = None
 
-def binary_tree_path_sum(root: Node, target: int) -> int:
+def dimeter_of_binary_tree(root: Node) -> int:
+    def depth(node):
+        if not node:
+            return 0
+        return max(depth(node.left), depth(node.right)) + 1
     res = 0
+    if root.left:
+        res += depth(root.left)
+    if root.right:
+        res += depth(root.right)
+    return res + 1
 
-    def dfs(node, path_sum):
-        nonlocal res
-        if node is None:
-            return
-        if path_sum == target:
-            res += 1
-        if node.left:
-            dfs(node.left, path_sum + node.left.value)
-        if node.right:
-            dfs(node.right, path_sum + node.right.value)
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
 
-    def path_sum(node):
-        if node is None:
-            return
-        dfs(node, node.value)
-        path_sum(node.left)
-        path_sum(node.right)
-
-    path_sum(root)
-
-    return res
-
-tree = Node(10)
-tree.left = Node(5)
-tree.right = Node(-3)
-tree.left.left = Node(3)
-tree.left.right = Node(2)
-tree.right.right = Node(11)
-tree.left.left.left = Node(3)
-tree.left.left.right = Node(-2)
-tree.left.right.right = Node(1)
-
-print(binary_tree_path_sum(tree, 8))
-print(binary_tree_path_sum(tree, 7))
-tree.right.right = Node(10)
-print(binary_tree_path_sum(tree, 8))
+print(dimeter_of_binary_tree(root))
+print(dimeter_of_binary_tree(root.left))
+print(dimeter_of_binary_tree(root.right))
