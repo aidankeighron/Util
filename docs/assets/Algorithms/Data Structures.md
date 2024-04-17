@@ -212,3 +212,28 @@ def list_primes(n: int) -> list:
             primes.append(i)
     return primes
 ```
+
+# Binary Tree Mirror
+
+Return the mirror of a binary tree, flipping it around the root node.
+
+```python
+from __future__ import annotations
+from dataclasses import dataclass
+
+@dataclass
+class Node:
+    value: int
+    left: Node | None = None
+    right: Node | None = None
+
+def mirror_binary_tree(root: Node) -> Node:
+    def mirror(node):
+        if not node:
+            return
+        node.left, node.right = node.right, node.left
+        mirror(node.left)
+        mirror(node.right)
+    mirror(root)
+    return root
+```

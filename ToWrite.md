@@ -6,10 +6,7 @@
 ## Data Structures
   * Binary Tree
     * [Avl Tree](data_structures/binary_tree/avl_tree.py)
-    * [Basic Binary Tree](data_structures/binary_tree/basic_binary_tree.py)
     * [Binary Search Tree](data_structures/binary_tree/binary_search_tree.py)
-    * [Binary Search Tree Recursive](data_structures/binary_tree/binary_search_tree_recursive.py)
-    * [Binary Tree Mirror](data_structures/binary_tree/binary_tree_mirror.py)
     * [Binary Tree Traversals](data_structures/binary_tree/binary_tree_traversals.py)
     * [Diff Views Of Binary Tree](data_structures/binary_tree/diff_views_of_binary_tree.py)
     * [Distribute Coins](data_structures/binary_tree/distribute_coins.py)
@@ -21,7 +18,6 @@
     * [Is Sum Tree](data_structures/binary_tree/is_sum_tree.py)
     * [Lazy Segment Tree](data_structures/binary_tree/lazy_segment_tree.py)
     * [Lowest Common Ancestor](data_structures/binary_tree/lowest_common_ancestor.py)
-    * [Maximum Fenwick Tree](data_structures/binary_tree/maximum_fenwick_tree.py)
     * [Merge Two Binary Trees](data_structures/binary_tree/merge_two_binary_trees.py)
     * [Mirror Binary Tree](data_structures/binary_tree/mirror_binary_tree.py)
     * [Non Recursive Segment Tree](data_structures/binary_tree/non_recursive_segment_tree.py)

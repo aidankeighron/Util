@@ -1,17 +1,31 @@
-def list_prime(n: int) -> list:
-    primes = []
-    if n > 1:
-        primes.append(1)
-    if n > 2:
-        primes.append(2)
-    numbers = (i for i in range(1, (n+1), 2))
-    for i in (n for n in numbers if n > 1):
-        bound = int(i**0.5) + 1
-        for j in range(3, bound, 2):
-            if i % j == 0:
-                break
-        else:
-            primes.append(i)
-    return primes
+from __future__ import annotations
+from dataclasses import dataclass
 
-print(list_prime(11))
+@dataclass
+class Node:
+    value: int
+    left: Node | None = None
+    right: Node | None = None
+
+def mirror_binary_tree(root: Node) -> Node:
+    def mirror(node):
+        if not node:
+            return
+        node.left, node.right = node.right, node.left
+        mirror(node.left)
+        mirror(node.right)
+    mirror(root)
+    return root
+
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.right.left = Node(4)
+root.right.right = Node(5)
+root.left.left = Node(6)
+root.left.right = Node(7)
+root.left.left.left = Node(6)
+root.left.left.left = Node(8)
+root.left.left.right = Node(9)
+
+print(mirror_binary_tree(root))
