@@ -1,4 +1,5 @@
 from __future__ import annotations
+from collections import defaultdict, deque
 from dataclasses import dataclass
 
 @dataclass
@@ -7,25 +8,44 @@ class Node:
     left: Node | None = None
     right: Node | None = None
 
-def mirror_binary_tree(root: Node) -> Node:
-    def mirror(node):
+def binary_tree_side_view(root: Node, right: bool) -> list:
+    res = []
+    def dfs(node, depth):
         if not node:
             return
-        node.left, node.right = node.right, node.left
-        mirror(node.left)
-        mirror(node.right)
-    mirror(root)
-    return root
+        if depth == len(res):
+            res.append(node.value)
+        if right:
+            dfs(node.right, depth+1)
+            dfs(node.left, depth+1)
+        else:
+            dfs(node.left, depth+1)
+            dfs(node.right, depth+1)
+    dfs(root, 0)
+    return res
 
-root = Node(1)
-root.left = Node(2)
-root.right = Node(3)
-root.right.left = Node(4)
-root.right.right = Node(5)
-root.left.left = Node(6)
-root.left.right = Node(7)
-root.left.left.left = Node(6)
-root.left.left.left = Node(8)
-root.left.left.right = Node(9)
+def binary_tree_top_and_bottom_view(root: Node, top: bool) -> list:
+    queue = deque([(root, 0)])
+    seen = defaultdict(list)
+    res = []
+    while queue:
+        node, order = queue.pop()
 
-print(mirror_binary_tree(root))
+        seen[order].append(node.value)
+
+        if node.left:
+            queue.append((node.left, order-1))
+        if node.right:
+            queue.append((node.right, order+1))
+
+    for _, values in sorted(seen.items(), key=lambda x: x[0]):
+        if top:
+            res.append(values[0])
+        else:
+            res.append(values[-1])
+
+    return res
+
+root =  Node(3, Node(9), Node(20, Node(15), Node(7)))
+
+print(binary_tree_top_and_bottom_view(root, False))

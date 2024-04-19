@@ -7,7 +7,6 @@
   * Binary Tree
     * [Avl Tree](data_structures/binary_tree/avl_tree.py)
     * [Binary Search Tree](data_structures/binary_tree/binary_search_tree.py)
-    * [Binary Tree Traversals](data_structures/binary_tree/binary_tree_traversals.py)
     * [Diff Views Of Binary Tree](data_structures/binary_tree/diff_views_of_binary_tree.py)
     * [Distribute Coins](data_structures/binary_tree/distribute_coins.py)
     * [Fenwick Tree](data_structures/binary_tree/fenwick_tree.py)
