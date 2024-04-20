@@ -7,8 +7,7 @@
   * Binary Tree
     * [Avl Tree](data_structures/binary_tree/avl_tree.py)
     * [Binary Search Tree](data_structures/binary_tree/binary_search_tree.py)
-    * [Diff Views Of Binary Tree](data_structures/binary_tree/diff_views_of_binary_tree.py)
-    * [Distribute Coins](data_structures/binary_tree/distribute_coins.py)
+
     * [Fenwick Tree](data_structures/binary_tree/fenwick_tree.py)
     * [Flatten Binarytree To Linkedlist](data_structures/binary_tree/flatten_binarytree_to_linkedlist.py)
     * [Floor And Ceiling](data_structures/binary_tree/floor_and_ceiling.py)
