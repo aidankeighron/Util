@@ -7,27 +7,28 @@ class Node:
     left: Node | None = None
     right: Node | None = None
 
-def distribute_coins(root: Node):
-
-    def distribute(node):
+def binary_tree_to_linked_list(root: Node) -> None:
+    def flatten(node):
         if node is None:
-            return (0, 1)
+            return
+        flatten(node.left)
+        right = node.right
+        node.right = node.left
+        node.left = None
+        cur = node
+        while cur.right:
+            cur = cur.right
+        
+        cur.right = right
+        flatten(right)
+    flatten(root)
 
-        left_moves, left_excess = distribute(node.left)
-        right_moves, right_excess = distribute(node.right)
+root = Node(1)
+root.left = Node(2)
+root.right = Node(5)
+root.left.left = Node(3)
+root.left.right = Node(4)
+root.right.right = Node(6)
 
-        coins_to_left = 1 - left_excess
-        coins_to_right = 1 - right_excess
-
-        new_moves = left_moves + right_moves + abs(coins_to_left) + abs(coins_to_right)
-
-        return (new_moves, node.value - coins_to_left - coins_to_right)
-
-    return distribute(root)[0]
-
-print(distribute_coins(Node(3, Node(0), Node(0))))
-    # 2
-print(distribute_coins(Node(0, Node(3), Node(0))))
-    # 3
-print(distribute_coins(Node(0, Node(0), Node(3))))
-    # 3
+binary_tree_to_linked_list(root)
+print(root)

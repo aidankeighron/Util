@@ -324,3 +324,34 @@ def distribute_coins(root: Node):
 
     return distribute(root)[0]
 ```
+
+# Flatten Binary Tree to LinkedList
+
+Takes a binary tree and compresses it in-place into a linked list
+
+```python
+from __future__ import annotations
+from dataclasses import dataclass
+
+@dataclass
+class Node:
+    value: int
+    left: Node | None = None
+    right: Node | None = None
+
+def binary_tree_to_linked_list(root: Node) -> None:
+    def flatten(node):
+        if node is None:
+            return
+        flatten(node.left)
+        right = node.right
+        node.right = node.left
+        node.left = None
+        cur = node
+        while cur.right:
+            cur = cur.right
+        
+        cur.right = right
+        flatten(right)
+    flatten(root)
+```

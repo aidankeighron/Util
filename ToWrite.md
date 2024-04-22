@@ -8,7 +8,6 @@
     * [Avl Tree](data_structures/binary_tree/avl_tree.py)
     * [Binary Search Tree](data_structures/binary_tree/binary_search_tree.py)
 
-    * [Fenwick Tree](data_structures/binary_tree/fenwick_tree.py)
     * [Flatten Binarytree To Linkedlist](data_structures/binary_tree/flatten_binarytree_to_linkedlist.py)
     * [Floor And Ceiling](data_structures/binary_tree/floor_and_ceiling.py)
     * [Inorder Tree Traversal 2022](data_structures/binary_tree/inorder_tree_traversal_2022.py)
