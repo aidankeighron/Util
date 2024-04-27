@@ -355,3 +355,25 @@ def binary_tree_to_linked_list(root: Node) -> None:
         flatten(right)
     flatten(root)
 ```
+
+# Is Binary Tree Sorted
+
+Checks if a binary tree is sorted, i.e. is it a valid BST, binary search tree.
+
+```python
+from __future__ import annotations
+from dataclasses import dataclass
+
+@dataclass
+class Node:
+    value: int
+    left: Node | None = None
+    right: Node | None = None
+
+def is_sorted(root):
+    if root.left and (root.value < root.left.value or not is_sorted(root.left)):
+        return False
+    if root.right and (root.value > root.right.value or not is_sorted(root.right)):
+        return False
+    return True
+```

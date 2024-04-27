@@ -7,28 +7,18 @@ class Node:
     left: Node | None = None
     right: Node | None = None
 
-def binary_tree_to_linked_list(root: Node) -> None:
-    def flatten(node):
-        if node is None:
-            return
-        flatten(node.left)
-        right = node.right
-        node.right = node.left
-        node.left = None
-        cur = node
-        while cur.right:
-            cur = cur.right
-        
-        cur.right = right
-        flatten(right)
-    flatten(root)
+def is_sorted(root):
+    if root.left and (root.value < root.left.value or not is_sorted(root.left)):
+        return False
+    if root.right and (root.value > root.right.value or not is_sorted(root.right)):
+        return False
+    return True
 
-root = Node(1)
-root.left = Node(2)
-root.right = Node(5)
-root.left.left = Node(3)
+root = Node(5)
+root.left = Node(3)
+root.right = Node(6)
+root.left.left = Node(2)
 root.left.right = Node(4)
-root.right.right = Node(6)
+root.right.right = Node(7)
 
-binary_tree_to_linked_list(root)
-print(root)
+print(is_sorted(root))

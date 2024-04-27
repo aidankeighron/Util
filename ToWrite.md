@@ -8,9 +8,6 @@
     * [Avl Tree](data_structures/binary_tree/avl_tree.py)
     * [Binary Search Tree](data_structures/binary_tree/binary_search_tree.py)
 
-    * [Flatten Binarytree To Linkedlist](data_structures/binary_tree/flatten_binarytree_to_linkedlist.py)
-    * [Floor And Ceiling](data_structures/binary_tree/floor_and_ceiling.py)
-    * [Inorder Tree Traversal 2022](data_structures/binary_tree/inorder_tree_traversal_2022.py)
     * [Is Sorted](data_structures/binary_tree/is_sorted.py)
     * [Is Sum Tree](data_structures/binary_tree/is_sum_tree.py)
     * [Lazy Segment Tree](data_structures/binary_tree/lazy_segment_tree.py)
