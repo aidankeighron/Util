@@ -8,7 +8,6 @@
     * [Avl Tree](data_structures/binary_tree/avl_tree.py)
     * [Binary Search Tree](data_structures/binary_tree/binary_search_tree.py)
 
-    * [Is Sorted](data_structures/binary_tree/is_sorted.py)
     * [Is Sum Tree](data_structures/binary_tree/is_sum_tree.py)
     * [Lazy Segment Tree](data_structures/binary_tree/lazy_segment_tree.py)
     * [Lowest Common Ancestor](data_structures/binary_tree/lowest_common_ancestor.py)

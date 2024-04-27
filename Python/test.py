@@ -7,18 +7,27 @@ class Node:
     left: Node | None = None
     right: Node | None = None
 
-def is_sorted(root):
-    if root.left and (root.value < root.left.value or not is_sorted(root.left)):
-        return False
-    if root.right and (root.value > root.right.value or not is_sorted(root.right)):
-        return False
-    return True
+    def __iter__(self):
+        if self.left:
+            yield from self.left
+        yield self.value
+        if self.right:
+            yield from self.right
 
-root = Node(5)
-root.left = Node(3)
-root.right = Node(6)
-root.left.left = Node(2)
-root.left.right = Node(4)
-root.right.right = Node(7)
+def is_sum_tree(root: Node) -> bool:
+    if not root.left and not root.right:
+        return True
+    left = sum(root.left) if root.left else 0
+    right = sum(root.right) if root.right else 0
+    return all((root.value == left+right, 
+                is_sum_tree(root.left) if root.left else True, 
+                is_sum_tree(root.right) if root.right else True))
 
-print(is_sorted(root))
+root = Node(26)
+root.left = Node(10)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(6)
+root.right.right = Node(3)
+
+print(is_sum_tree(root))
