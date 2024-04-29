@@ -408,3 +408,29 @@ def is_sum_tree(root: Node) -> bool:
                 is_sum_tree(root.left) if root.left else True, 
                 is_sum_tree(root.right) if root.right else True))
 ```
+
+# Merge Two Binary Trees
+
+Combines two binary trees, if two node overlap the value is set to their sum otherwise it is set to the non null node.
+
+```python
+from __future__ import annotations
+from dataclasses import dataclass
+
+@dataclass
+class Node:
+    value: int
+    left: Node | None = None
+    right: Node | None = None
+
+def merge_two_binary_trees(root: Node, other: Node) -> Node:
+    if root is None:
+        return other
+    if other is None:
+        return root
+
+    root.value = root.value + other.value
+    root.left = merge_two_binary_trees(root.left, other.left)
+    root.right = merge_two_binary_trees(root.right, other.right)
+    return root
+```

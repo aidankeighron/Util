@@ -7,27 +7,25 @@ class Node:
     left: Node | None = None
     right: Node | None = None
 
-    def __iter__(self):
-        if self.left:
-            yield from self.left
-        yield self.value
-        if self.right:
-            yield from self.right
+def merge_two_binary_trees(root: Node, other: Node) -> Node:
+    if root is None:
+        return other
+    if other is None:
+        return root
 
-def is_sum_tree(root: Node) -> bool:
-    if not root.left and not root.right:
-        return True
-    left = sum(root.left) if root.left else 0
-    right = sum(root.right) if root.right else 0
-    return all((root.value == left+right, 
-                is_sum_tree(root.left) if root.left else True, 
-                is_sum_tree(root.right) if root.right else True))
+    root.value = root.value + other.value
+    root.left = merge_two_binary_trees(root.left, other.left)
+    root.right = merge_two_binary_trees(root.right, other.right)
+    return root
 
-root = Node(26)
-root.left = Node(10)
-root.right = Node(3)
-root.left.left = Node(4)
-root.left.right = Node(6)
-root.right.right = Node(3)
-
-print(is_sum_tree(root))
+tree1 = Node(5)
+tree1.left = Node(6)
+tree1.right = Node(7)
+tree1.left.left = Node(2)
+tree2 = Node(4)
+tree2.left = Node(5)
+tree2.right = Node(8)
+tree2.left.right = Node(1)
+tree2.right.right = Node(4)
+merged_tree = merge_two_binary_trees(tree1, tree2)
+print(merged_tree)

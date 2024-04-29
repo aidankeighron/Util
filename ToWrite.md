@@ -5,14 +5,11 @@
 
 ## Data Structures
   * Binary Tree
+    * [Basic Binary Tree](https://the-algorithms.com/algorithm/basic-binary-tree)
     * [Avl Tree](data_structures/binary_tree/avl_tree.py)
     * [Binary Search Tree](data_structures/binary_tree/binary_search_tree.py)
-
-    * [Is Sum Tree](data_structures/binary_tree/is_sum_tree.py)
     * [Lazy Segment Tree](data_structures/binary_tree/lazy_segment_tree.py)
-    * [Lowest Common Ancestor](data_structures/binary_tree/lowest_common_ancestor.py)
-    * [Merge Two Binary Trees](data_structures/binary_tree/merge_two_binary_trees.py)
-    * [Mirror Binary Tree](data_structures/binary_tree/mirror_binary_tree.py)
+
     * [Non Recursive Segment Tree](data_structures/binary_tree/non_recursive_segment_tree.py)
     * [Number Of Possible Binary Trees](data_structures/binary_tree/number_of_possible_binary_trees.py)
     * [Red Black Tree](data_structures/binary_tree/red_black_tree.py)
