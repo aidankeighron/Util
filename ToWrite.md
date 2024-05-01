@@ -10,8 +10,6 @@
     * [Binary Search Tree](data_structures/binary_tree/binary_search_tree.py)
     * [Lazy Segment Tree](data_structures/binary_tree/lazy_segment_tree.py)
 
-    * [Non Recursive Segment Tree](data_structures/binary_tree/non_recursive_segment_tree.py)
-    * [Number Of Possible Binary Trees](data_structures/binary_tree/number_of_possible_binary_trees.py)
     * [Red Black Tree](data_structures/binary_tree/red_black_tree.py)
     * [Segment Tree](data_structures/binary_tree/segment_tree.py)
     * [Segment Tree Other](data_structures/binary_tree/segment_tree_other.py)

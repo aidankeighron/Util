@@ -434,3 +434,26 @@ def merge_two_binary_trees(root: Node, other: Node) -> Node:
     root.right = merge_two_binary_trees(root.right, other.right)
     return root
 ```
+
+# Number Of Possible Binary Trees
+
+Finds number of possible binary trees given a number of nodes. 
+
+```python
+def number_of_binary_trees(nodes: int) -> int:
+    def factorial(n):
+        out = 1
+        for i in range(1, n+1):
+            out *= i
+        return out
+    
+    def catalan_number(n):
+        out = 1
+        for i in range(n):
+            out *= 2*n-i
+            out //= i+1
+        return out // (n+1)
+        
+
+    return factorial(nodes) * catalan_number(nodes)
+```
