@@ -1,33 +1,17 @@
-## Cellular Automata
-  * [Conways Game Of Life](cellular_automata/conways_game_of_life.py)
-  * [Langtons Ant](cellular_automata/langtons_ant.py)
-  * [Wa Tor](cellular_automata/wa_tor.py)
-
 ## Data Structures
   * Binary Tree
     * [Basic Binary Tree](https://the-algorithms.com/algorithm/basic-binary-tree)
     * [Avl Tree](data_structures/binary_tree/avl_tree.py)
     * [Binary Search Tree](data_structures/binary_tree/binary_search_tree.py)
-    * [Lazy Segment Tree](data_structures/binary_tree/lazy_segment_tree.py)
-
     * [Red Black Tree](data_structures/binary_tree/red_black_tree.py)
     * [Segment Tree](data_structures/binary_tree/segment_tree.py)
-    * [Segment Tree Other](data_structures/binary_tree/segment_tree_other.py)
-    * [Serialize Deserialize Binary Tree](data_structures/binary_tree/serialize_deserialize_binary_tree.py)
-    * [Symmetric Tree](data_structures/binary_tree/symmetric_tree.py)
-    * [Treap](data_structures/binary_tree/treap.py)
     * [Wavelet Tree](data_structures/binary_tree/wavelet_tree.py)
   * Disjoint Set
-    * [Alternate Disjoint Set](data_structures/disjoint_set/alternate_disjoint_set.py)
     * [Disjoint Set](data_structures/disjoint_set/disjoint_set.py)
   * Hashing
-    * [Bloom Filter](data_structures/hashing/bloom_filter.py)
-    * [Double Hash](data_structures/hashing/double_hash.py)
     * [Hash Map](data_structures/hashing/hash_map.py)
-    * [Hash Table](data_structures/hashing/hash_table.py)
-    * [Hash Table With Linked List](data_structures/hashing/hash_table_with_linked_list.py)
     * Number Theory
-      * [Prime Numbers](data_structures/hashing/number_theory/prime_numbers.py)
+      * [Prime](data_structures/hashing/number_theory/prime_numbers.py)
     * [Quadratic Probing](data_structures/hashing/quadratic_probing.py)
     * Tests
       * [Test Hash Map](data_structures/hashing/tests/test_hash_map.py)
