@@ -1,17 +1,30 @@
-def number_of_binary_trees(nodes: int) -> int:
-    def factorial(n):
-        out = 1
-        for i in range(1, n+1):
-            out *= i
-        return out
-    
-    def catalan_number(n):
-        out = 1
-        for i in range(n):
-            out *= 2*n-i
-            out //= i+1
-        return out // (n+1)
-        
+from __future__ import annotations
+from dataclasses import dataclass
 
-    return factorial(nodes) * catalan_number(nodes)
-print(number_of_binary_trees(6))
+@dataclass
+class Node:
+    data: any
+    next_node: Node | None = None
+
+def detect_cycle(head: Node) -> bool:
+    if not head:
+        return False
+
+    slow = head
+    fast = head
+    while fast and fast.next_node:
+        slow = slow.next_node if slow else None
+        fast = fast.next_node.next_node
+        if slow == fast:
+            return True
+
+    return False
+
+head = Node(1)
+head.next_node = Node(2)
+head.next_node.next_node = Node(3)
+head.next_node.next_node.next_node = Node(4)
+head.next_node.next_node.next_node.next_node = Node(5)
+head.next_node.next_node.next_node.next_node.next_node = head
+
+print(detect_cycle(head))

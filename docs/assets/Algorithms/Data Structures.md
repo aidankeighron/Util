@@ -419,20 +419,21 @@ from dataclasses import dataclass
 
 @dataclass
 class Node:
-    value: int
-    left: Node | None = None
-    right: Node | None = None
+    data: any
+    next_node: Node | None = None
 
-def merge_two_binary_trees(root: Node, other: Node) -> Node:
-    if root is None:
-        return other
-    if other is None:
-        return root
+def detect_cycle(head: Node) -> bool:
+    if not head:
+        return False
 
-    root.value = root.value + other.value
-    root.left = merge_two_binary_trees(root.left, other.left)
-    root.right = merge_two_binary_trees(root.right, other.right)
-    return root
+    slow = head
+    fast = head
+    while fast and fast.next_node:
+        slow = slow.next_node if slow else None
+        fast = fast.next_node.next_node
+        if slow == fast:
+            return True
+    return False
 ```
 
 # Number Of Possible Binary Trees
@@ -456,4 +457,33 @@ def number_of_binary_trees(nodes: int) -> int:
         
 
     return factorial(nodes) * catalan_number(nodes)
+```
+
+# Floyds Cycle Detection
+
+Detects cycles in a list using a two pointer system (fast and slow pointer), if a linked list has a cycle then the fast pointer will loop back around and catch up to the slow pointer. 
+
+```python
+from collections.abc import Iterator
+from dataclasses import dataclass
+from typing import Any, Self
+
+@dataclass
+class Node:
+    data: Any
+    next_node: Self | None = None
+
+def detect_cycle(head: Node) -> bool:
+    if not head
+        return False
+
+    slow = head
+    fast = head
+    while fast and fast.next_node:
+        slow = slow.next_node if slow else None
+        slow = slow.next_node.next_node
+        if slow == fast:
+            return True
+
+    return False
 ```

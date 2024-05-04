@@ -10,25 +10,10 @@
     * [Disjoint Set](data_structures/disjoint_set/disjoint_set.py)
   * Hashing
     * [Hash Map](data_structures/hashing/hash_map.py)
-    * Number Theory
-      * [Prime](data_structures/hashing/number_theory/prime_numbers.py)
-    * [Quadratic Probing](data_structures/hashing/quadratic_probing.py)
-    * Tests
-      * [Test Hash Map](data_structures/hashing/tests/test_hash_map.py)
   * Heap
-    * [Binomial Heap](data_structures/heap/binomial_heap.py)
     * [Heap](data_structures/heap/heap.py)
-    * [Heap Generic](data_structures/heap/heap_generic.py)
-    * [Max Heap](data_structures/heap/max_heap.py)
-    * [Min Heap](data_structures/heap/min_heap.py)
-    * [Randomized Heap](data_structures/heap/randomized_heap.py)
-    * [Skew Heap](data_structures/heap/skew_heap.py)
   * Linked List
-    * [Circular Linked List](data_structures/linked_list/circular_linked_list.py)
-    * [Deque Doubly](data_structures/linked_list/deque_doubly.py)
     * [Doubly Linked List](data_structures/linked_list/doubly_linked_list.py)
-    * [Doubly Linked List Two](data_structures/linked_list/doubly_linked_list_two.py)
-    * [Floyds Cycle Detection](data_structures/linked_list/floyds_cycle_detection.py)
     * [From Sequence](data_structures/linked_list/from_sequence.py)
     * [Has Loop](data_structures/linked_list/has_loop.py)
     * [Is Palindrome](data_structures/linked_list/is_palindrome.py)
