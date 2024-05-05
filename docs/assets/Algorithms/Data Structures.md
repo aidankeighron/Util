@@ -485,3 +485,26 @@ def detect_cycle(head: Node) -> bool:
 
     return False
 ```
+
+# Middle Element of Linked List
+
+Finds the middle element of a linked list.
+
+```python
+from __future__ import annotations
+from dataclasses import dataclass
+
+@dataclass
+class Node:
+    data: any
+    next_node: Node | None = None
+
+def find_middle_element(head: Node) -> int:
+    slow = head
+    fast = head
+
+    while fast and fast.next_node:
+        fast = fast.next_node.next_node
+        slow = slow.next_node
+    return slow.data
+```
