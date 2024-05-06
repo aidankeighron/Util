@@ -15,9 +15,6 @@
   * Linked List
     * [Singly Linked List](data_structures/linked_list/singly_linked_list.py)
 
-    * [Print Reverse](data_structures/linked_list/print_reverse.py)
-    * [Reverse K Group](data_structures/linked_list/reverse_k_group.py)
-    * [Rotate To The Right](data_structures/linked_list/rotate_to_the_right.py)
     * [Skip List](data_structures/linked_list/skip_list.py)
     * [Swap Nodes](data_structures/linked_list/swap_nodes.py)
   * Queue
