@@ -6,30 +6,15 @@ class Node:
     data: any
     next_node: Node | None = None
 
-def rotate(head: Node, places: int) -> Node:
-    if not head.next_node:
-        return head
-
-    length = 1
-    temp = head
-    while temp.next_node:
-        length += 1
-        temp = temp.next_node
-
-    new_head_index = length-places
-
-    temp = head
-    for _ in range(new_head_index-1):
-        temp = temp.next_node
-    
-    new_head = temp.next_node
-    temp.next_node = None
-    temp = new_head
-    while temp.next_node:
-        temp = temp.next_node
-    temp.next_node = head
-
-    return new_head
+def swap_nodes(head:Node, node_data_1: int, node_data_2: int) -> Node:
+    node_1 = head
+    while node_1 and node_1.data != node_data_1:
+        node_1 = node_1.next_node
+    node_2 = head
+    while node_2 and node_2.data != node_data_2:
+        node_2 = node_2.next_node
+    node_1.data, node_2.data = node_2.data, node_1.data
+    return head
 head = Node(1)
 head.next_node = Node(2)
 head.next_node.next_node = Node(3)
@@ -37,4 +22,4 @@ head.next_node.next_node.next_node = Node(4)
 head.next_node.next_node.next_node.next_node = Node(5)
 # head.next_node.next_node.next_node.next_node.next_node = Node(6)
 
-print(rotate(head, 3))
+print(swap_nodes(head, 2, 4))

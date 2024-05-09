@@ -547,3 +547,27 @@ def rotate(head: Node, places: int) -> Node:
 
     return new_head
 ```
+
+## Swap Nodes
+
+Swaps the data values of two nodes in a linked list
+
+```python
+from __future__ import annotations
+from dataclasses import dataclass
+
+@dataclass
+class Node:
+    data: any
+    next_node: Node | None = None
+
+def swap_nodes(head:Node, node_data_1: int, node_data_2: int) -> Node:
+    node_1 = head
+    while node_1 and node_1.data != node_data_1:
+        node_1 = node_1.next_node
+    node_2 = head
+    while node_2 and node_2.data != node_data_2:
+        node_2 = node_2.next_node
+    node_1.data, node_2.data = node_2.data, node_1.data
+    return head
+```
