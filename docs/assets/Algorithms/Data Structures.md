@@ -571,3 +571,20 @@ def swap_nodes(head:Node, node_data_1: int, node_data_2: int) -> Node:
     node_1.data, node_2.data = node_2.data, node_1.data
     return head
 ```
+
+## Balanced Parentheses
+
+Are the parentheses balanced
+
+```python
+def are_balanced_parentheses(parentheses: str) -> bool:
+    stack = []
+    bracket_pairs = {"(": ")", "[": "]", "{": "}"}
+    for bracket in parentheses:
+        if bracket in bracket_pairs.keys():
+            stack.append(bracket)
+        elif bracket in bracket_pairs.values() and (len(stack) == 0 or
+            bracket_pairs[stack.pop()] != bracket):
+            return False
+    return len(stack) == 0
+```
