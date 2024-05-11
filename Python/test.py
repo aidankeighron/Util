@@ -1,12 +1,24 @@
-def are_balanced_parentheses(parentheses: str) -> bool:
-    stack = []
-    bracket_pairs = {"(": ")", "[": "]", "{": "}"}
-    for bracket in parentheses:
-        if bracket in bracket_pairs.keys():
-            stack.append(bracket)
-        elif bracket in bracket_pairs.values() and (len(stack) == 0 or
-            bracket_pairs[stack.pop()] != bracket):
-            return False
-    return len(stack) == 0
+import operator as op
 
-print(are_balanced_parentheses("[(])"))
+def solve_equation(equation: str) -> float:
+    operators = {"*": op.mul, "/": op.truediv, "+": op.add, "-": op.sub}
+
+    operand_stack = []
+    operator_stack = []
+
+    for ch in equation:
+        if ch.isdigit():
+            operand_stack.append(int(ch))
+        elif ch in operators:
+            operator_stack.append(ch)
+        elif ch == ")":
+            operator = operator_stack.pop()
+            number_1 = operand_stack.pop()
+            number_2 = operand_stack.pop()
+
+            total = operators[operator](number_1, number_2)
+            operand_stack.append(total)
+            
+    return operand_stack.pop()
+
+print(solve_equation("(5 + ((4 * 2) * (2 + 3)))"))
