@@ -1,24 +1,43 @@
-import operator as op
+def infix_to_postfix(expression):
+    stack = []
+    postfix = []
 
-def solve_equation(equation: str) -> float:
-    operators = {"*": op.mul, "/": op.truediv, "+": op.add, "-": op.sub}
+    precedences = ["+","-","*","/","^"]
 
-    operand_stack = []
-    operator_stack = []
+    for char in expression:
+        if char.isalpha() or char.isdigit():
+            postfix.append(char)
+        elif char == "(":
+            stack.append(char)
+        elif char == ")":
+            while stack and stack[-1] != "(":
+                postfix.append(stack.pop())
+            stack.pop()
+        else:
+            while True:
+                if not stack:
+                    stack.append(char)
+                    break
 
-    for ch in equation:
-        if ch.isdigit():
-            operand_stack.append(int(ch))
-        elif ch in operators:
-            operator_stack.append(ch)
-        elif ch == ")":
-            operator = operator_stack.pop()
-            number_1 = operand_stack.pop()
-            number_2 = operand_stack.pop()
+                char_precedence = precedences.index(char)
+                tos_precedence = precedences.index(stack[-1]) if stack[-1] in precedences else -1
 
-            total = operators[operator](number_1, number_2)
-            operand_stack.append(total)
-            
-    return operand_stack.pop()
+                if char_precedence > tos_precedence:
+                    stack.append(char)
+                    break
+                if char_precedence < tos_precedence:
+                    postfix.append(stack.pop())
+                    continue
 
-print(solve_equation("(5 + ((4 * 2) * (2 + 3)))"))
+                if char == "^":
+                    stack.append(char)
+                    break
+                postfix.append(stack.pop())
+
+    postfix.extend(stack)
+    return ' '.join(postfix)
+
+print(infix_to_postfix("3+2"))
+print(infix_to_postfix("(3+4)*5-6"))
+print(infix_to_postfix("a+b*c+(d*e+f)*g"))
+print(infix_to_postfix("2^3^2"))

@@ -617,3 +617,48 @@ def solve_equation(equation: str) -> float:
             
     return operand_stack.pop()
 ```
+
+## Infix to Postfix Conversion
+
+Convert an infix operation to a postfix operation
+
+```python
+def infix_to_postfix(expression):
+    stack = []
+    postfix = []
+
+    precedences = ["+","-","*","/","^"]
+
+    for char in expression:
+        if char.isalpha() or char.isdigit():
+            postfix.append(char)
+        elif char == "(":
+            stack.append(char)
+        elif char == ")":
+            while stack and stack[-1] != "(":
+                postfix.append(stack.pop())
+            stack.pop()
+        else:
+            while True:
+                if not stack:
+                    stack.append(char)
+                    break
+
+                char_precedence = precedences.index(char)
+                tos_precedence = precedences.index(stack[-1]) if stack[-1] in precedences else -1
+
+                if char_precedence > tos_precedence:
+                    stack.append(char)
+                    break
+                if char_precedence < tos_precedence:
+                    postfix.append(stack.pop())
+                    continue
+
+                if char == "^":
+                    stack.append(char)
+                    break
+                postfix.append(stack.pop())
+
+    postfix.extend(stack)
+    return ' '.join(postfix)
+```
