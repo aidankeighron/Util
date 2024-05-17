@@ -620,7 +620,7 @@ def solve_equation(equation: str) -> float:
 
 ## Infix to Postfix Conversion
 
-Convert an infix operation to a postfix operation
+Convert an infix operation to a postfix operation.
 
 ```python
 def infix_to_postfix(expression):
@@ -661,4 +661,24 @@ def infix_to_postfix(expression):
 
     postfix.extend(stack)
     return ' '.join(postfix)
+```
+
+## Next Greater Element
+
+Finds the next greater element for each index -1 if element can't be found.
+
+```python
+def next_greatest_element(arr: list) -> list:
+    stack = []
+    result = [-1] * len(arr)
+    for i in reversed(range(len(arr))):
+        if stack:
+            while stack[-1] <= arr[i]:
+                stack.pop()
+                if not stack:
+                    break
+        if stack:
+            result[i] = stack[-1]
+        stack.append(arr[i])
+    return result
 ```
