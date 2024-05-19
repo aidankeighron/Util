@@ -20,13 +20,7 @@
     * [Queue On Pseudo Stack](data_structures/queue/queue_on_pseudo_stack.py)
   * Stacks
     * [Dijkstras Two Stack Algorithm](data_structures/stacks/dijkstras_two_stack_algorithm.py)
-    * [Postfix Evaluation](data_structures/stacks/postfix_evaluation.py)
-    * [Prefix Evaluation](data_structures/stacks/prefix_evaluation.py)
     * [Stack](data_structures/stacks/stack.py)
-    * [Stack Using Two Queues](data_structures/stacks/stack_using_two_queues.py)
-    * [Stack With Doubly Linked List](data_structures/stacks/stack_with_doubly_linked_list.py)
-    * [Stack With Singly Linked List](data_structures/stacks/stack_with_singly_linked_list.py)
-    * [Stock Span Problem](data_structures/stacks/stock_span_problem.py)
   * Trie
     * [Radix Tree](data_structures/trie/radix_tree.py)
     * [Trie](data_structures/trie/trie.py)

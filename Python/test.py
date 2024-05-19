@@ -1,26 +1,14 @@
-def evaluate(expressions: list[str]) -> float:
-    stack = []
+def calculate_span(prices: list, span: list) -> list:
+    stack = [0]
+    span[0] = 1
+    for price in range(1, len(prices)):
+        while stack and prices[stack[0]] <= prices[price]:
+            stack.pop()
+        
+        span[price] = price + (-stack[0] if stack else 1)
 
-    operators = {
-        "^": lambda a, b: a**b,
-        "*": lambda a, b: a * b,
-        "/": lambda a, b: a / b,
-        "+": lambda a, b: a + b,
-        "-": lambda a, b: a - b,
-    }
-    for expression in expressions:
-        if expression not in operators:
-            stack.append(float(expression))
-            continue
-        if expression in ["-","+"] and len(stack) < 2:
-            x = stack.pop()
-            if expression == "-":
-                x *= -1
-            stack.append(float(x))
-            continue
-        b = stack.pop()
-        a = stack.pop()
-        stack.append(operators[expression](a,b))
-    return float(stack[0])
+        stack.append(price)
+
+    return span
 
 print(evaluate(["2", "-1.9", "+", "3", "*"]))
