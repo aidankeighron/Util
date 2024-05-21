@@ -25,13 +25,7 @@
     * [Radix Tree](data_structures/trie/radix_tree.py)
     * [Trie](data_structures/trie/trie.py)
 
-## Digital Image Processing
-  * [Canny](digital_image_processing/edge_detection/canny.py)
-  * [Resize](digital_image_processing/resize/resize.py)
-  * [Rotation](digital_image_processing/rotation/rotation.py)
-
 ## Divide And Conquer
-  * [Closest Pair Of Points](divide_and_conquer/closest_pair_of_points.py)
   * [Convex Hull](divide_and_conquer/convex_hull.py)
   * [Heaps Algorithm](divide_and_conquer/heaps_algorithm.py)
   * [Heaps Algorithm Iterative](divide_and_conquer/heaps_algorithm_iterative.py)

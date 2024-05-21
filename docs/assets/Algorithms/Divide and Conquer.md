@@ -1,3 +1,13 @@
+---
+layout: script
+language: Algorithms
+---
+
+## Closest Pair of Points
+
+Finds the distance between the closest pair of points
+
+```python
 def closest_pair(points: list) -> float:
     points_sorted_x = sorted(points, key=lambda x: x[0])
     points_sorted_y = sorted(points, key=lambda x: x[1])
@@ -40,6 +50,4 @@ def closest_pair(points: list) -> float:
         return min(closest_pair_distance, closest_in_strip)
 
     return closest_pair_of_points(points_sorted_x, points_sorted_y, len(points)) ** 0.5
-
-points = [(2, 3), (12, 30)]
-print("Distance:", closest_pair(points))
+```
