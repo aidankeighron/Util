@@ -27,8 +27,6 @@
 
 ## Divide And Conquer
   * [Convex Hull](divide_and_conquer/convex_hull.py)
-  * [Heaps Algorithm](divide_and_conquer/heaps_algorithm.py)
-  * [Heaps Algorithm Iterative](divide_and_conquer/heaps_algorithm_iterative.py)
   * [Inversions](divide_and_conquer/inversions.py)
   * [Kth Order Statistic](divide_and_conquer/kth_order_statistic.py)
   * [Max Difference Pair](divide_and_conquer/max_difference_pair.py)

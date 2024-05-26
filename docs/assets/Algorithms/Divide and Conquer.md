@@ -51,3 +51,29 @@ def closest_pair(points: list) -> float:
 
     return closest_pair_of_points(points_sorted_x, points_sorted_y, len(points)) ** 0.5
 ```
+
+## Heaps Algorithm
+
+Finds all permutations of an input list
+
+```python
+def heaps(arr: list) -> list:
+    res = []
+
+    def generate(k, subset):
+        if k == 1:
+            res.append(subset[:])
+            return
+
+        generate(k-1, subset)
+
+        for i in range(k-1):
+            if k % 2 == 0:
+                subset[i], subset[k-1] = subset[k-1], subset[i]
+            else:
+                subset[0], subset[k-1] = subset[k-1], subset[0]
+            generate(k-1, subset)
+    
+    generate(len(arr), arr)
+    return res
+```
