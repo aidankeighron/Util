@@ -1,21 +1,34 @@
-def heaps(arr: list) -> list:
-    res = []
+def count_inversions(arr: list) -> int:
 
-    def generate(k, subset):
-        if k == 1:
-            res.append(subset[:])
-            return
-
-        generate(k-1, subset)
-
-        for i in range(k-1):
-            if k % 2 == 0:
-                subset[i], subset[k-1] = subset[k-1], subset[i]
+    def cross_inversions(p, q):
+        r = []
+        i = j = num_inversion = 0
+        while i < len(p) and j < len(q):
+            if p[i] > q[j]:
+                num_inversion += len(p) - i
+                r.append(q[j])
+                j += 1
             else:
-                subset[0], subset[k-1] = subset[k-1], subset[0]
-            generate(k-1, subset)
-    
-    generate(len(arr), arr)
-    return res
+                r.append(p[i])
+                i += 1
+        if i < len(p):
+            r.extend(p[i:])
+        else:
+            r.extend(q[j:])
+        
+        return r, num_inversion
 
-print(heaps([1,2,3]))
+    def inversions(subset):
+        if len(subset) <= 1:
+            return subset, 0
+        mid = len(subset) // 2
+
+        a, inversion_p = inversions(subset[0:mid])
+        b, inversion_q = inversions(subset[mid:])
+        c, cross_inversion = cross_inversions(a, b)
+        
+        return c, inversion_p + inversion_q + cross_inversion
+
+    return inversions(arr)[1]
+
+print(count_inversions([10, 2, 1, 5, 5, 2, 11]))
