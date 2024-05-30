@@ -1,34 +1,16 @@
-def count_inversions(arr: list) -> int:
+from random import choice
 
-    def cross_inversions(p, q):
-        r = []
-        i = j = num_inversion = 0
-        while i < len(p) and j < len(q):
-            if p[i] > q[j]:
-                num_inversion += len(p) - i
-                r.append(q[j])
-                j += 1
-            else:
-                r.append(p[i])
-                i += 1
-        if i < len(p):
-            r.extend(p[i:])
-        else:
-            r.extend(q[j:])
-        
-        return r, num_inversion
+def kth_number(arr: list, k: int) -> int:
+    pivot = choice(arr)
 
-    def inversions(subset):
-        if len(subset) <= 1:
-            return subset, 0
-        mid = len(subset) // 2
+    smaller = [i for i in arr if i < pivot]
+    bigger = [i for i in arr if i > pivot]
 
-        a, inversion_p = inversions(subset[0:mid])
-        b, inversion_q = inversions(subset[mid:])
-        c, cross_inversion = cross_inversions(a, b)
-        
-        return c, inversion_p + inversion_q + cross_inversion
+    if len(smaller) == k -1:
+        return pivot
+    elif len(smaller) < k - 1:
+        return kth_number(bigger, k - len(smaller) - 1)
+    else:
+        return kth_number(smaller, k)
 
-    return inversions(arr)[1]
-
-print(count_inversions([10, 2, 1, 5, 5, 2, 11]))
+print(kth_number([25, 21, 98, 100, 76, 22, 43, 60, 89, 87], 4))
