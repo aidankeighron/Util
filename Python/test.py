@@ -1,16 +1,23 @@
-from random import choice
 
-def kth_number(arr: list, k: int) -> int:
-    pivot = choice(arr)
 
-    smaller = [i for i in arr if i < pivot]
-    bigger = [i for i in arr if i > pivot]
+def max_difference(arr: list) -> tuple[int, int]:
+    if len(arr) == 1:
+        return arr[0], arr[0]
 
-    if len(smaller) == k -1:
-        return pivot
-    elif len(smaller) < k - 1:
-        return kth_number(bigger, k - len(smaller) - 1)
+    first = arr[:len(arr)//2]
+    second = arr[len(arr)//2:]
+
+    small_1, big_1 = max_difference(first)
+    small_2, big_2 = max_difference(second)
+
+    min_first = min(first)
+    max_second = max(second)
+
+    if big_2 - small_2 > max_second - min_first and big_2 - small_2 > big_1 - small_1:
+        return small_2, big_2
+    elif big_1 - small_1 > max_second - min_first:
+        return small_1, big_1
     else:
-        return kth_number(smaller, k)
+        return min_first, max_second
 
-print(kth_number([25, 21, 98, 100, 76, 22, 43, 60, 89, 87], 4))
+print(max_difference([5, 11, 2, 1, 7, 9, 0, 7]))
