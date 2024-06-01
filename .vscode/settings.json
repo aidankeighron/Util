@@ -1,11 +1,13 @@
 {
     "cSpell.words": [
         "dataclass",
+        "elif",
         "evenbetter",
         "Floyds",
         "kwargs",
         "leetcode",
         "println",
+        "subarray",
         "Varargs"
     ]
 }

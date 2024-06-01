@@ -1,23 +1,40 @@
+def max_subarray(arr: list) -> list:
 
+    def max_cross_sum(low, mid, high):
+        cross_sum = 0
+        left_sum, max_left = float("-inf"), -1
+        right_sum, max_right = float("-inf"), -1
+        
+        for i in range(mid, low-1, -1):
+            cross_sum += arr[i]
+            if cross_sum > left_sum:
+                left_sum = cross_sum
+                max_left = i
 
-def max_difference(arr: list) -> tuple[int, int]:
-    if len(arr) == 1:
-        return arr[0], arr[0]
+        cross_sum = 0
+        for i in range(mid+1, high+1):
+            cross_sum += arr[i]
+            if cross_sum > right_sum:
+                right_sum = cross_sum
+                max_right = i
 
-    first = arr[:len(arr)//2]
-    second = arr[len(arr)//2:]
+        return max_left, max_right, (left_sum + right_sum)
 
-    small_1, big_1 = max_difference(first)
-    small_2, big_2 = max_difference(second)
+    def subarray(low, high):
+        if low == high:
+            return low, high, arr[low]
 
-    min_first = min(first)
-    max_second = max(second)
+        mid = (low + high) // 2
+        left_low, left_high, left_sum = subarray(low, mid)
+        right_low, right_high, right_sum = subarray(mid+1, high)
+        cross_left, cross_right, cross_sum = max_cross_sum(low, mid, high)
+        if left_sum >= right_sum and left_sum >= cross_sum:
+            return left_low, left_high, left_sum
+        elif right_sum >= left_sum and right_sum >= cross_sum:
+            return right_low, right_high, right_sum
+        return cross_left, cross_right, cross_sum
 
-    if big_2 - small_2 > max_second - min_first and big_2 - small_2 > big_1 - small_1:
-        return small_2, big_2
-    elif big_1 - small_1 > max_second - min_first:
-        return small_1, big_1
-    else:
-        return min_first, max_second
+    res = subarray(0, len(arr)-1)
+    return arr[res[0]:res[1]+1]
 
-print(max_difference([5, 11, 2, 1, 7, 9, 0, 7]))
+print(max_subarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
