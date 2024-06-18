@@ -1,16 +1,16 @@
-def merge_sort(arr: list) -> list:
-    
-    def merge(left, right):
-        res = []
-        while left and right:
-            res.append(left.pop(0) if left[0] <= right[0] else right.pop(0))
-        res.extend(left)
-        res.extend(right)
-        return res
-    
-    if len(arr) <= 1:
-        return arr
+def peak(arr: list) -> int:
     mid = len(arr) // 2
-    return merge(merge_sort(arr[:mid]), merge_sort(arr[mid:]))
+    three = arr[mid-1:mid+2]
 
-print(merge_sort([0, 5, 3, 2, 2]))
+    if three[1] > three[0] and three[1] > three [2]:
+        return three[1]
+    elif three[0] < three[2]:
+        if len(arr[:mid]) == 2:
+            m -= 1
+        return peak(arr[mid:])
+    else:
+        if len(arr[:mid]) == 2:
+            m += 1
+        return peak(arr[:mid])
+
+print(peak([1, 2, 3, 4, 5, 4, 3, 2, 1]))
