@@ -250,3 +250,16 @@ def peak(arr: list) -> int:
             m += 1
         return peak(arr[:mid])
 ```
+
+## Power
+
+Calculates $x^a$
+
+```python
+def power(x: int, a: int):
+    if not a:
+        return 1
+    if a % 2 == 0:
+        return power(x, a//2) * power(x, a//2)
+    return x * power(x, a//2) * power(x, a//2)
+```

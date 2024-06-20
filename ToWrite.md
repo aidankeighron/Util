@@ -27,9 +27,6 @@
 
 ## Divide And Conquer
   * [Convex Hull](divide_and_conquer/convex_hull.py)
-  * [Mergesort](divide_and_conquer/mergesort.py)
-  * [Peak](divide_and_conquer/peak.py)
-  * [Power](divide_and_conquer/power.py)
   * [Strassen Matrix Multiplication](divide_and_conquer/strassen_matrix_multiplication.py)
 
 ## Dynamic Programming
