@@ -3,7 +3,7 @@ layout: script
 language: Algorithms
 ---
 
-# Permutations
+## Permutations
 
 Using a depth first search this algorithm creates a list of all possible reordering of a list. It does this by recursively testing all options.
 
@@ -27,7 +27,7 @@ def permutations(collection: list) -> list:
     return res
 ```
 
-# Equilibrium Index in Array
+## Equilibrium Index in Array
 
 Find the index where the right and left sections of an array are equal in sum.
 
@@ -43,7 +43,7 @@ def equilibrium_index(arr: list) -> int:
     return -1
 ```
 
-# Product Sum
+## Product Sum
 
 Product sum of an array is the sum of the array multiplied by their depths
 
@@ -55,7 +55,7 @@ def product_sum(arr: list, depth: int) -> int:
     return res * depth
 ```
 
-# Find Triplets with 0 Sum
+## Find Triplets with 0 Sum
 
 Finds three numbers that add up to zero by finding two and seeing if there exists a number that when added to them results in zero
 
@@ -72,7 +72,7 @@ def find_triplets_with_0_sum(arr: list) -> set:
     return res
 ```
 
-# Kth Largest Element
+## Kth Largest Element
 
 Finds the `position` largest element in `arr`.
 
@@ -102,7 +102,7 @@ def kth_largest_element(arr: list, position: int) -> int:
             low = index + 1
 ```
 
-# Binary Tree Node Sum
+## Binary Tree Node Sum
 
 Sums up all nodes in a binary tree
 
@@ -124,7 +124,7 @@ def binary_tree_sum(tree: Node) -> int:
     return dfs(tree)
 ```
 
-# Binary Tree Path Sum
+## Binary Tree Path Sum
 
 Given a root and a target sum find the number of paths that sum up to the target
 
@@ -164,7 +164,7 @@ def binary_tree_path_sum(root: Node, target: int) -> int:
     return res
 ```
 
-# Diameter Of Binary Tree
+## Diameter Of Binary Tree
 
 Finds the diameter of a binary tree where the diameter is defined as the number of nodes on the longest path between two end nodes
 
@@ -191,7 +191,7 @@ def dimeter_of_binary_tree(root: Node) -> int:
     return res + 1
 ```
 
-# Prime
+## Prime
 
 Lists all prime numbers < n
 
@@ -213,7 +213,7 @@ def list_primes(n: int) -> list:
     return primes
 ```
 
-# Binary Tree Mirror
+## Binary Tree Mirror
 
 Return the mirror of a binary tree, flipping it around the root node.
 
@@ -238,7 +238,7 @@ def mirror_binary_tree(root: Node) -> Node:
     return root
 ```
 
-# Different Views of a Binary Tree
+## Different Views of a Binary Tree
 
 If you were to look at the binary tree from a certain perspective what would you see
 
@@ -292,7 +292,7 @@ def binary_tree_top_and_bottom_view(root: Node, top: bool) -> list:
     return res
 ```
 
-# Distribute Coins
+## Distribute Coins
 
 Finds number of moves it would take for each node if the binary tree to have a value of one if you can only move one coin at a time
 
@@ -325,7 +325,7 @@ def distribute_coins(root: Node):
     return distribute(root)[0]
 ```
 
-# Flatten Binary Tree to LinkedList
+## Flatten Binary Tree to LinkedList
 
 Takes a binary tree and compresses it in-place into a linked list
 
@@ -356,7 +356,7 @@ def binary_tree_to_linked_list(root: Node) -> None:
     flatten(root)
 ```
 
-# Is Binary Tree Sorted
+## Is Binary Tree Sorted
 
 Checks if a binary tree is sorted, i.e. is it a valid BST, binary search tree.
 
@@ -378,7 +378,7 @@ def is_sorted(root: Node) -> bool:
     return True
 ```
 
-# Is Sum Tree
+## Is Sum Tree
 
 Checks if a binary tree is a sum tree.
 
@@ -409,7 +409,7 @@ def is_sum_tree(root: Node) -> bool:
                 is_sum_tree(root.right) if root.right else True))
 ```
 
-# Merge Two Binary Trees
+## Merge Two Binary Trees
 
 Combines two binary trees, if two node overlap the value is set to their sum otherwise it is set to the non null node.
 
@@ -435,7 +435,7 @@ def merge_two_binary_trees(root: Node, other: Node) -> Node:
     return root
 ```
 
-# Number Of Possible Binary Trees
+## Number Of Possible Binary Trees
 
 Finds number of possible binary trees given a number of nodes. 
 
@@ -458,7 +458,7 @@ def number_of_binary_trees(nodes: int) -> int:
     return factorial(nodes) * catalan_number(nodes)
 ```
 
-# Floyds Cycle Detection
+## Floyds Cycle Detection
 
 Detects cycles in a list using a two pointer system (fast and slow pointer), if a linked list has a cycle then the fast pointer will loop back around and catch up to the slow pointer. 
 
@@ -486,7 +486,7 @@ def detect_cycle(head: Node) -> bool:
     return False
 ```
 
-# Middle Element of Linked List
+## Middle Element of Linked List
 
 Finds the middle element of a linked list.
 
@@ -509,7 +509,7 @@ def find_middle_element(head: Node) -> int:
     return slow.data
 ```
 
-# Rotate To The Right
+## Rotate To The Right
 
 Rotates the linked list to the right a number of places
 

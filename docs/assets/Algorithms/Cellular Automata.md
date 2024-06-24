@@ -3,7 +3,7 @@ layout: script
 language: Algorithms
 ---
 
-# Conway's Game Of Life
+## Conway's Game Of Life
 
 Implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) in python.
 
@@ -123,7 +123,7 @@ while True:
     pg.display.flip()
 ```
 
-# Langtons Ant
+## Langtons Ant
 
 Implementation of [Langtons Ant](https://en.wikipedia.org/wiki/Langton%27s_ant) in python.
 
@@ -236,7 +236,7 @@ while True:
     pg.display.flip()
 ```
 
-# Wa Tor
+## Wa Tor
 
 Battle between sharks and fish.
 

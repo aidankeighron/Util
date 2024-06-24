@@ -3,7 +3,7 @@ layout: script
 language: Algorithms
 ---
 
-# Combination Sum
+## Combination Sum
 
 Using backtracking we find all possible combinations of the collection that sum up to target.
 
@@ -24,7 +24,7 @@ def combination_sum(collection: list, target: int) -> list:
     return result
 ```
 
-# All Subsequences
+## All Subsequences
 
 Finds all posable unique subsequence within `sequence` using backtracking.
 
@@ -46,7 +46,7 @@ def all_subsequences(sequence: list) -> list:
     return result
 ```
 
-# All Permutations
+## All Permutations
 
 This loops through all possible combinations making sure to keep the length the same as the input. It keeps track of the indexes used so it does not repeat indexes and it gets every possible combination. 
 
@@ -72,7 +72,7 @@ def all_permutations(sequence: list) -> list:
     return result
 ```
 
-# Generate Parentheses
+## Generate Parentheses
 
 Generate `n` number of parentheses pairs.
 
@@ -95,7 +95,7 @@ def generate_parentheses(n: int) -> list:
     return result
 ```
 
-# Sum of Subsets
+## Sum of Subsets
 
 Using backtracking it tests all combinations of number to get to the target sum.
 
@@ -116,7 +116,7 @@ def sum_of_subsets(numbers: list, target_sum: int) -> list:
     return result
 ```
 
-# Power Sum
+## Power Sum
 
 Finds the number of ways that `needed_sum` can be expressed as the sum of number to the nth `power`. Example: If `needed_sum = 13` and `power = 2` there is 1 way to get 13, `2^2 + 3^2 = 4 + 9 = 13`.
 
@@ -142,7 +142,7 @@ def power_sum(needed_sum: int, power: int) -> int:
     return result
 ```
 
-# Match Word Pattern
+## Match Word Pattern
 
 Checks to see if the input string matches the provided the word pattern.
 

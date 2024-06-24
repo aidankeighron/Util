@@ -3,7 +3,7 @@ layout: script
 language: Algorithms
 ---
 
-# Binary Search
+## Binary Search
 
 Find the index of a item in a sorted list.
 
@@ -34,7 +34,7 @@ midpoint = 0 + (4 - 0) // 2 = 2
 current = sorted_list[midpoint] = 3
 item > current -> left = midpoint + 1 = 3 
 
-# Loop 2
+ Loop 2
 left = 3
 right = 4
 midpoint = 3 + (4 - 3) // 2 = 3
@@ -42,7 +42,7 @@ current = sorted_list[midpoint] = 4
 item == current -> return 3 
 ```
 
-# Fibonacci Search
+## Fibonacci Search
 
 Searching algorithm that used the fibonacci sequence to narrow search range.
 [Video Explanation](https://www.youtube.com/watch?v=GAafWFRGP7k)

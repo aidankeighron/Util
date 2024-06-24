@@ -3,7 +3,7 @@ layout: script
 language: Algorithms
 ---
 
-# Fibonacci Numbers
+## Fibonacci Numbers
 
 Calculates the first `n` fibonacci numbers.
 
@@ -18,7 +18,7 @@ def fibonacci(n: int) -> list:
     return fib
 ```
 
-# Longest Common Substring
+## Longest Common Substring
 
 Finds the longest common substring between two strings.
 
@@ -59,7 +59,7 @@ dp = [
 output = "abc"
 ```
 
-# Knapsack
+## Knapsack
 
 Finds the max value that can be put into the knapsack taking into account the capacity and weights of the objects. I uses recursion to find if an object can be put in the knapsack optimally or if it needs to be omitted.
 
@@ -78,17 +78,17 @@ def knapsack(capacity: int, weights: list, values: list, counter: int) -> int:
         return max(new_value, without_value)
 ```
 
-# Minimum Cost Path
+## Minimum Cost Path
 
 Find the lowest "cost" from top left of a matrix to the bottom right. This works by choosing to either move down or right depending on the lowest cost.
 
 ```python
 def minimum_cost_path(matrix: list[list]) -> int:
-    # first row
+    ## first row
     for i in range(1, len(matrix[0])):
         matrix[i][i] += matrix[0][i-1]
 
-    # first column
+    ## first column
     for i in range(1, len(matrix)):
         matrix[i][0] += matrix[i - 1][0]
 
@@ -99,7 +99,7 @@ def minimum_cost_path(matrix: list[list]) -> int:
     return matrix[-1][-1]
 ```
 
-# Longest Palindrome Sequence
+## Longest Palindrome Sequence
 
 Finds the longest palindrome sequence in a string. Using a dp matrix to keep track of matching characters.
 
@@ -119,4 +119,24 @@ def longest_palindrome_sequence(string: str) -> int:
             else:
                 dp[i][j] = max(dp[i-1][j], dp[i][j-1])
     return dp[n][n]
+```
+
+## Abbreviation
+
+Check if a string is a valid abbreviation
+
+```python
+def abbreviation(string: str, abbreviation: str) -> bool:
+    dp = [[False for _ in range(len(abbreviation)+1)] for _ in range(len(string)+1)]
+    dp[0][0] = True
+
+    for i in range(len(string)):
+        for j in range(len(abbreviation)+1):
+            if dp[i][j]:
+                if j < len(abbreviation) and string[i].upper() == abbreviation[j]:
+                    dp[i+1][j+1] = True
+                if string[i].islower():
+                    dp[i+1][j] = True
+    
+    return dp[len(string)][len(abbreviation)]
 ```

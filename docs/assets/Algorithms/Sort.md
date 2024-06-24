@@ -3,7 +3,7 @@ layout: script
 language: Algorithms
 ---
 
-# Bubble Sort
+## Bubble Sort
 
 Moves all the largest elements to the right
 
@@ -37,7 +37,7 @@ bubble_sort([4,1,3,2])
 # [1, 2, 3, 4]
 ```
 
-# Quick Sort
+## Quick Sort
 
 Quick sort uses a pivot and sorts all greater numbers to the right of the pivot and all lesser numbers to the left. Doing this recursively will eventually get a sorted list.
 
@@ -65,17 +65,17 @@ Breakdown:
 ```python
 quick_sort([5,1,3,2])
 
-# Loop 1
+## Loop 1
 input = [5,1,3,2]
 pivot = 2
 [*lesser, pivot, *greater] = [1, 2, 5, 3]
 
-# Loop 2
+## Loop 2
 input = [5, 3]
 pivot = 5
 [*lesser, pivot, *greater] = [3, 5]
 
-# Loop 3
+## Loop 3
 input = [1]
 len < 2
 
