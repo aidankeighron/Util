@@ -30,8 +30,6 @@
   * [Strassen Matrix Multiplication](divide_and_conquer/strassen_matrix_multiplication.py)
 
 ## Dynamic Programming
-  * [Abbreviation](dynamic_programming/abbreviation.py)
-  * [All Construct](dynamic_programming/all_construct.py)
   * [Bitmask](dynamic_programming/bitmask.py)
   * [Catalan Numbers](dynamic_programming/catalan_numbers.py)
   * [Climbing Stairs](dynamic_programming/climbing_stairs.py)
