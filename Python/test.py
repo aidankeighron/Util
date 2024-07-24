@@ -1,19 +1,14 @@
-def all_construct(target: str, bank: list) -> list:
-    table = [[] for _ in range(len(target)+1)]
+def catalan_numbers(n: int) -> list:
+    catalan = [0] * (n+1)
+    catalan[0] = 1
+    
+    if n > 0:
+        catalan[1] = 1
 
-    table[0] = [[]]
+    for i in range(2, n+1):
+        for j in range(i):
+            catalan[i] += catalan[j] * catalan[i-j-1]
 
-    for i in range(len(target)+1):
-        if table[i] != []:
-            for word in bank:
-                if target[i:i+len(word)] == word:
-                    new_combinations = [[word, *way] for way in table[i]]
+    return catalan 
 
-                    table[i+len(word)] += new_combinations
-
-    for combination in table[len(target)]:
-        combination.reverse()
-
-    return table[len(target)]
-
-print(all_construct("purple",["purp","p","ur","le","purpl"]))
+print(catalan_numbers(10))
