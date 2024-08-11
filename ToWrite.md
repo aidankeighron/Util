@@ -31,8 +31,6 @@
 
 ## Dynamic Programming
   * [Bitmask](dynamic_programming/bitmask.py)
-  * [Catalan Numbers](dynamic_programming/catalan_numbers.py)
-  * [Climbing Stairs](dynamic_programming/climbing_stairs.py)
   * [Combination Sum Iv](dynamic_programming/combination_sum_iv.py)
   * [Edit Distance](dynamic_programming/edit_distance.py)
   * [Factorial](dynamic_programming/factorial.py)

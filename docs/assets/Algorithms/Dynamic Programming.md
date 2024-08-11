@@ -183,3 +183,17 @@ def catalan_numbers(n: int) -> list:
 
     return catalan 
 ```
+
+## Climbing Stairs
+
+Number of ways to climb n stairs when you can more 1 or 2 stairs at a time
+
+```python
+def climbing_stairs(num_steps: int) -> int:
+    if num_steps == 1:
+        return 1
+    prev, cur = 1, 1
+    for _ in range(num_steps-1):
+        prev, cur = cur, cur + prev
+    return cur
+```
