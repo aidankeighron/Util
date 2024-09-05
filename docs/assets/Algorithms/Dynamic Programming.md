@@ -218,3 +218,19 @@ def combination__sum_iv(target: int, array: list) -> int:
     dp = [-1] * (target+1)
     return recursion(target, dp)
 ```
+
+## Edit Distance
+
+Find how many edits needed to make two strings equal each other
+
+```python
+def edit_distance(source: str, target: str) -> int:
+    if not len(source):
+        return len(target)
+    elif not len(target):
+        return len(source)
+
+    delta = int(source[-1] != target [-1])
+
+    return min(edit_distance(source[:-1], target[:-1])+delta, edit_distance(source, target[:-1])+1, edit_distance(source[:-1], target)+1)
+```
