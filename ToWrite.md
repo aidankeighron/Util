@@ -31,10 +31,6 @@
 
 ## Dynamic Programming
   * [Bitmask](dynamic_programming/bitmask.py)
-  * [Edit Distance](dynamic_programming/edit_distance.py)
-  * [Factorial](dynamic_programming/factorial.py)
-  * [Fast Fibonacci](dynamic_programming/fast_fibonacci.py)
-  * [Fibonacci](dynamic_programming/fibonacci.py)
   * [Fizz Buzz](dynamic_programming/fizz_buzz.py)
   * [Floyd Warshall](dynamic_programming/floyd_warshall.py)
   * [Integer Partition](dynamic_programming/integer_partition.py)

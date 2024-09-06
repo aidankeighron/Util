@@ -234,3 +234,15 @@ def edit_distance(source: str, target: str) -> int:
 
     return min(edit_distance(source[:-1], target[:-1])+delta, edit_distance(source, target[:-1])+1, edit_distance(source[:-1], target)+1)
 ```
+
+## Factorial
+
+Calculates the factorial of a number
+
+```python
+def factorial(n: int) -> int:
+    value = 1
+    for i in range(1, n+1):
+        value *= i
+    return value
+```
