@@ -31,11 +31,6 @@
 
 ## Dynamic Programming
   * [Bitmask](dynamic_programming/bitmask.py)
-  * [Fizz Buzz](dynamic_programming/fizz_buzz.py)
-  * [Floyd Warshall](dynamic_programming/floyd_warshall.py)
-  * [Integer Partition](dynamic_programming/integer_partition.py)
-  * [Iterating Through Submasks](dynamic_programming/iterating_through_submasks.py)
-  * [Knapsack](dynamic_programming/knapsack.py)
   * [Largest Divisible Subset](dynamic_programming/largest_divisible_subset.py)
   * [Longest Common Subsequence](dynamic_programming/longest_common_subsequence.py)
   * [Longest Common Substring](dynamic_programming/longest_common_substring.py)

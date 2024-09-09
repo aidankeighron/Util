@@ -1,7 +1,9 @@
-def factorial(n: int) -> int:
-    value = 1
-    for i in range(1, n+1):
-        value *= i
-    return value
+def iterating_through_submasks(mask: int) -> list:
+    all_submasks = []
+    submask = mask
+    while submask:
+        all_submasks.append(submask)
+        submask = (submask - 1) & mask
 
-print(factorial(100))
+    return all_submasks
+print(iterating_through_submasks(15))
