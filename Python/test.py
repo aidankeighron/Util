@@ -1,31 +1,31 @@
-def largest_divisible_subset(array: list) -> list:
-    array.sort()
+def longest_common_subsequence(x: str, y: str) -> str:
+    m = len(x)
+    n = len(y)
 
-    memo = [1] * len(array)
-    hash_array = list(range(len(array)))
+    dp = [[0] * (n+1) for _ in range(m+1)]
 
-    for i, item in enumerate(array):
-        for prev in range(i):
-            if array[prev] != 0 and item % array[prev] == 0 and 1 + memo[prev] > memo[i]:
-                memo[i] = 1 + memo[prev]
-                hash_array[i] = prev
+    for i in range(1, m+1):
+        for j in range(1, n+1):
+            match = 1 if x[i-1] == y[j-1] else 0
 
-    largest = -1
-    largest_index = -1
+            dp[i][j] = max(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]+match)
 
-    for i, item in enumerate(memo):
-        if item > largest:
-            largest = item
-            largest_index = i
-    
-    if largest_index == -1:
-        return []
-    result = [array[largest_index]]
-    while hash_array[largest_index] != largest_index:
-        largest_index = hash_array[largest_index]
-        result.append(array[largest_index])
+    seq = ""
+    i, j = m, n
+    while i > 0 and j > 0:
+        match = 1 if x[i-1] == y[j-1] else 0
 
-    return result
+        if dp[i][j] == dp[i-1][j-1] + match:
+            if match:
+                seq = x[i-1] + seq
+            i -= 1
+            j -= 1
+        elif dp[i][j] == dp[i-1][j]:
+            i -= 1
+        else:
+            j -= 1
+
+    return seq
 
 
-print(largest_divisible_subset([1, 16, 7, 8, 4]))
+print(longest_common_subsequence("programming", "gaming"))
