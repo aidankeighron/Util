@@ -31,8 +31,6 @@
 
 ## Dynamic Programming
   * [Bitmask](dynamic_programming/bitmask.py)
-  * [Longest Common Subsequence](dynamic_programming/longest_common_subsequence.py)
-  * [Longest Common Substring](dynamic_programming/longest_common_substring.py)
   * [Longest Increasing Subsequence](dynamic_programming/longest_increasing_subsequence.py)
   * [Longest Increasing Subsequence O(Nlogn)](dynamic_programming/longest_increasing_subsequence_o(nlogn).py)
   * [Longest Palindromic Subsequence](dynamic_programming/longest_palindromic_subsequence.py)
