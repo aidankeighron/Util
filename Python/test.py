@@ -1,19 +1,29 @@
-def longest_common_substring(a: str, b: str) -> str:
-    n = len(a)
-    m = len(b)
-    
-    dp = [[0]*(m+1) for _ in range(n+1)]
-    ans_index = 0 
-    ans_len = 0
+def longest_increasing_subsequence(array: list) -> list:
+    n = len(array)
 
-    for i in range(1, n+1): 
-        for j in range(1, m+1):
-            if a[i-1] == b[j-1]:
-                dp[i][j] = 1 + dp[i-1][j-1]
-                if dp[i][j] > ans_len:
-                    ans_index = i
-                    ans_len = dp[i][j]
+    if n <= 1:
+        return array
     
-    return a[ans_index-ans_len:ans_index]
+    pivot = array[0]
+    is_found = False
+    i = 1
+    longest_subseq = []
+    while not is_found and i < n:
+        if array[i] < pivot:
+            is_found = True
+            a += len(array[i:])
+            temp_array = [element for element in array[i:] if element >= array[i]]
+            temp_array = longest_increasing_subsequence(temp_array)
+            if len(temp_array) > len(longest_subseq):
+                longest_subseq = temp_array
+        else:
+            i += 1
 
-print(longest_common_substring("zxabcdezy", "yzabcdezx"))
+    temp_array = [element for element in array[1:] if element >= pivot]
+    temp_array = [pivot, *longest_increasing_subsequence(temp_array)]
+    if len(temp_array) > len(longest_subseq):
+        return temp_array
+    else:
+        return longest_subseq
+
+print(longest_increasing_subsequence([10, 22, 9, 33, 21, 50, 41, 60, 80]))

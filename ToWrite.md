@@ -31,8 +31,6 @@
 
 ## Dynamic Programming
   * [Bitmask](dynamic_programming/bitmask.py)
-  * [Longest Increasing Subsequence](dynamic_programming/longest_increasing_subsequence.py)
-  * [Longest Increasing Subsequence O(Nlogn)](dynamic_programming/longest_increasing_subsequence_o(nlogn).py)
   * [Longest Palindromic Subsequence](dynamic_programming/longest_palindromic_subsequence.py)
   * [Matrix Chain Multiplication](dynamic_programming/matrix_chain_multiplication.py)
   * [Matrix Chain Order](dynamic_programming/matrix_chain_order.py)
