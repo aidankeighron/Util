@@ -1,29 +1,19 @@
-def longest_increasing_subsequence(array: list) -> list:
-    n = len(array)
+def longest_palindromic_subsequence(string: str) -> int:
+    n = len(string)
+    rev = string[::-1]
+    dp = [[-1]*(n+1) for _ in range(n+1)]
 
-    if n <= 1:
-        return array
+    for i in range(n+1):
+        dp[i][0] = 0
+        dp[0][i] = 0
+
+    for i in range(1, n+1):
+        for j in range(1, n+1):
+            if string[i-1] == rev[j-1]:
+                dp[i][j] = 1 + dp[i-1][j-1]
+            else:
+                dp[i][j] = max(dp[i-1][j], dp[i][j-1])
     
-    pivot = array[0]
-    is_found = False
-    i = 1
-    longest_subseq = []
-    while not is_found and i < n:
-        if array[i] < pivot:
-            is_found = True
-            a += len(array[i:])
-            temp_array = [element for element in array[i:] if element >= array[i]]
-            temp_array = longest_increasing_subsequence(temp_array)
-            if len(temp_array) > len(longest_subseq):
-                longest_subseq = temp_array
-        else:
-            i += 1
+    return dp[n][n]
 
-    temp_array = [element for element in array[1:] if element >= pivot]
-    temp_array = [pivot, *longest_increasing_subsequence(temp_array)]
-    if len(temp_array) > len(longest_subseq):
-        return temp_array
-    else:
-        return longest_subseq
-
-print(longest_increasing_subsequence([10, 22, 9, 33, 21, 50, 41, 60, 80]))
+print(longest_palindromic_subsequence("bbabcbcab"))
