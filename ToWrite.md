@@ -31,10 +31,6 @@
 
 ## Dynamic Programming
   * [Bitmask](dynamic_programming/bitmask.py)
-  * [Longest Palindromic Subsequence](dynamic_programming/longest_palindromic_subsequence.py)
-  * [Matrix Chain Multiplication](dynamic_programming/matrix_chain_multiplication.py)
-  * [Matrix Chain Order](dynamic_programming/matrix_chain_order.py)
-  * [Max Non Adjacent Sum](dynamic_programming/max_non_adjacent_sum.py)
   * [Max Product Subarray](dynamic_programming/max_product_subarray.py)
   * [Max Subarray Sum](dynamic_programming/max_subarray_sum.py)
   * [Min Distance Up Bottom](dynamic_programming/min_distance_up_bottom.py)

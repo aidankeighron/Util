@@ -413,3 +413,18 @@ def longest_palindromic_subsequence(string: str) -> int:
     
     return dp[n][n]
 ```
+
+## Max Non Adjacent Sum
+
+Find the maximum non-adjacent sum of numbers in the input list
+
+```python
+def maximum_non_adjacent_sum(nums: list) -> int:
+    max_including = nums[0]
+    max_excluding = 0
+
+    for num in nums[1:]:
+        max_including, max_excluding = max_excluding + num, max(max_including, max_excluding)
+
+    return max(max_excluding, max_including) 
+```
