@@ -31,7 +31,6 @@
 
 ## Dynamic Programming
   * [Bitmask](dynamic_programming/bitmask.py)
-  * [Max Product Subarray](dynamic_programming/max_product_subarray.py)
   * [Max Subarray Sum](dynamic_programming/max_subarray_sum.py)
   * [Min Distance Up Bottom](dynamic_programming/min_distance_up_bottom.py)
   * [Minimum Coin Change](dynamic_programming/minimum_coin_change.py)
