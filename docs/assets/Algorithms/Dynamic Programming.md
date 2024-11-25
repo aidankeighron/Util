@@ -428,3 +428,23 @@ def maximum_non_adjacent_sum(nums: list) -> int:
 
     return max(max_excluding, max_including) 
 ```
+
+## Max Product Subarray
+
+Finds the maximum product subarray
+
+```python
+def max_product_subarray(nums: list) -> int:
+    
+    current_max = current_min = res = nums[0]
+    for i in range(1, len(nums)):
+        n = nums[i]
+
+        if n  < 0:
+            current_max, current_min = current_min, current_max
+        current_max = max(n, current_max * n)
+        current_min = min(n, current_min * n)
+
+        res = max(res, current_max)
+    return res
+```

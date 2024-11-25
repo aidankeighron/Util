@@ -1,10 +1,15 @@
-def maximum_non_adjacent_sum(nums: list) -> int:
-    max_including = nums[0]
-    max_excluding = 0
+def max_product_subarray(nums: list) -> int:
+    
+    current_max = current_min = res = nums[0]
+    for i in range(1, len(nums)):
+        n = nums[i]
 
-    for num in nums[1:]:
-        max_including, max_excluding = max_excluding + num, max(max_including, max_excluding)
+        if n  < 0:
+            current_max, current_min = current_min, current_max
+        current_max = max(n, current_max * n)
+        current_min = min(n, current_min * n)
 
-    return max(max_excluding, max_including) 
+        res = max(res, current_max)
+    return res
 
-print(maximum_non_adjacent_sum([1, 5, 3, 7, 2, 2, 6]))
+print(max_product_subarray([2, 3, 2, 4]))
