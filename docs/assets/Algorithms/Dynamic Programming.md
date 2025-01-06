@@ -448,3 +448,19 @@ def max_product_subarray(nums: list) -> int:
         res = max(res, current_max)
     return res
 ```
+
+## Max Subarray Sum
+
+Subarray with the largest sum
+
+```python
+def max_subarray_sum(nums: list) -> int:
+    max_sum = 0
+    current_sum = 0
+
+    for num in nums:
+        current_sum = max(num, current_sum + num)
+        max_sum = max(max_sum, current_sum)
+    
+    return max_sum
+```

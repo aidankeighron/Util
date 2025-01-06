@@ -1,15 +1,11 @@
-def max_product_subarray(nums: list) -> int:
+def max_subarray_sum(nums: list) -> int:
+    max_sum = 0
+    current_sum = 0
+
+    for num in nums:
+        current_sum = max(num, current_sum + num)
+        max_sum = max(max_sum, current_sum)
     
-    current_max = current_min = res = nums[0]
-    for i in range(1, len(nums)):
-        n = nums[i]
+    return max_sum
 
-        if n  < 0:
-            current_max, current_min = current_min, current_max
-        current_max = max(n, current_max * n)
-        current_min = min(n, current_min * n)
-
-        res = max(res, current_max)
-    return res
-
-print(max_product_subarray([2, 3, 2, 4]))
+print(max_subarray_sum([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
