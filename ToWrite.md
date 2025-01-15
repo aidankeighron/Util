@@ -31,7 +31,6 @@
 
 ## Dynamic Programming
   * [Bitmask](dynamic_programming/bitmask.py)
-  * [Min Distance Up Bottom](dynamic_programming/min_distance_up_bottom.py)
   * [Minimum Coin Change](dynamic_programming/minimum_coin_change.py)
   * [Minimum Cost Path](dynamic_programming/minimum_cost_path.py)
   * [Minimum Partition](dynamic_programming/minimum_partition.py)
