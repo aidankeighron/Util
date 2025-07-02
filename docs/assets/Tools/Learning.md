@@ -3,30 +3,42 @@ layout: script
 language: Tools
 ---
 
+## Projects
+
 # [build-your-own-x](https://github.com/codecrafters-io/build-your-own-x)
 
 Guides on how to build a wide variety technologies from scratch with little experience
-
-# [The Algorithms](https://github.com/TheAlgorithms)
-
-List of programming algorithms written in various languages
 
 # [Free programming books](https://ebookfoundation.github.io/free-programming-books/)
 
 List of free programming resources in many languages
 
-# [Learn Algorithms](https://www.geeksforgeeks.org/top-algorithms-and-data-structures-for-competitive-programming/)
+# [Learn Anything](https://learn-anything.xyz/)
 
-Articles on all major algorithms
+Free resources on how to learn literally anything
+
+## Algorithms
 
 # [Leetcode Patterns](https://seanprashad.com/leetcode-patterns/)
 
-Organize leetcode problems based on topic
+Organized leetcode problems based on topic
 
-# [Grepper](https://chromewebstore.google.com/detail/grepper/amaaokahonnfjjemodnpmeenfpnnbkco)
+# [NeetCode](https://neetcode.io/roadmap)
 
-When looking up coding related topics adds a section below the search bar with example code relating to the searched topic
+Curated flowchart of leetcode problems, helping learn with a more natural progression
 
-# [QuillBot](https://chromewebstore.google.com/detail/quillbot-ai-writing-and-g/iidnbdjijdkbmajdffnidomddglmieko)
+# [Advent Of Code](https://adventofcode.com/)
 
-AI writing and grammar checking tool
+Competitive leetcode like competition that happens every December
+
+# [Project Euler](https://projecteuler.net/archives)
+
+Leetcode alternative focusing more on practical applications
+
+# [Grind 75](https://www.techinterviewhandbook.org/grind75?hours=5)
+
+Leetcode to prepare for technical interviews
+
+# [The Algorithms](https://the-algorithms.com/)
+
+Archive of most algorithms
