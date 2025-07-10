@@ -31,6 +31,10 @@ Gallery of color pallets
 
 Check color contrast and compliance
 
+# [Realtime Colors](https://www.realtimecolors.com/)
+
+Generate an entire website theme with the click of a button
+
 ## Tools
 
 # [Tailkits](https://tailkits.com/tools/)
