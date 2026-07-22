@@ -1,28 +1,26 @@
 <!DOCTYPE html>
-<html lang=""en>
+<html lang="en">
   {% include head.html %}
   <body>
     {% include header.html %}
-    <section class="languages">
+    <main>
       {% assign languageFiles = page.path | split:'/' | last %}
       {% assign language = languageFiles | split:'.md' | first %}
-      {% for pagePath in site.pages %}
-        {% capture languagePath %}assets/{{language}}{% endcapture %}
-        {% if pagePath.path contains languagePath %}
-          {% assign scriptFile = pagePath.path | split:'/' | last %}
-          {% assign script = scriptFile | split:'.md' | first %}
-          <a href="{{site.baseurl}}/assets/{{language}}/{{script}}">
-
-            <article class="language">
-              <center>
-                <h2 class="language-title">
-                  {{script}} 
-                </h2>
+      <h1 class="page-title">{{language}}</h1>
+      <section class="languages">
+        {% for pagePath in site.pages %}
+          {% capture languagePath %}assets/{{language}}{% endcapture %}
+          {% if pagePath.path contains languagePath %}
+            {% assign scriptFile = pagePath.path | split:'/' | last %}
+            {% assign script = scriptFile | split:'.md' | first %}
+            <a href="{{site.baseurl}}/assets/{{language}}/{{script}}">
+              <article class="language">
+                <h2 class="language-title">{{script}}</h2>
               </article>
-            </center>
-          </a>
-        {% endif %}
-      {% endfor %}
-    </section>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </section>
+    </main>
   </body>
 </html>
