@@ -1,55 +1,32 @@
 ---
 layout: default
 ---
-<div class="dashboard-container">
-  <section class="hero-section">
-    <div class="hero-header">
-      <h1 class="hero-title">Util</h1>
-      <span class="hero-badge">Cheatsheets & Tools</span>
-    </div>
-    <p class="hero-subtitle">
-      A fast, lightweight hub of programming cheat sheets, algorithms, language references, and zero-backend user-scoped tools. Select any topic from the selector panel on the left or browse below.
-    </p>
-  </section>
+<div class="home-container">
+  <h1 class="page-title">Util</h1>
 
-  <!-- Storage Architecture Spotlight -->
-  <section class="spotlight-card">
-    <div class="spotlight-content">
-      <div class="spotlight-tag">Architecture Blueprint</div>
-      <h2 class="spotlight-title">Zero-Database User-Scoped Storage for AI Tools</h2>
-      <p class="spotlight-description">
-        Learn how to build private, client-side tools (like a game CSV insights analyzer) with <strong>zero backend database</strong> and <strong>zero server hosting bills</strong>. Combines local IndexedDB with Google Drive's hidden <code>appDataFolder</code> for privacy-first, cross-device persistence.
-      </p>
-      <div class="spotlight-actions">
-        <a href="{{ site.baseurl }}/assets/Tools/Storage%20Architecture" class="btn-primary">
-          Read Storage Blueprint →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Categories Grid -->
-  <section class="section-categories">
-    <h2 class="section-title">Categories</h2>
-    <div class="categories-grid">
-      {% assign lang_pages = site.pages | where_exp: "item", "item.path contains 'assets/Languages/'" | sort: "path" %}
-      {% for lp in lang_pages %}
+  <div class="catalog-sections">
+    {% for lp in site.pages %}
+      {% if lp.path contains 'assets/Languages/' %}
         {% assign category_file = lp.path | split: '/' | last %}
         {% assign category_name = category_file | split: '.md' | first %}
-        {% assign category_scripts = site.pages | where: "language", category_name | sort: "path" %}
-        <a href="{{ site.baseurl }}/assets/Languages/{{ category_name }}" class="category-card">
-          <div class="category-card-header">
-            <h3 class="category-card-title">{{ category_name }}</h3>
-            <span class="category-card-badge">{{ category_scripts.size }} items</span>
-          </div>
-          <p class="category-card-desc">
-            Quick reference guides and snippets for {{ category_name }}.
-          </p>
-          <div class="category-card-footer">
-            <span class="category-card-link">View topics →</span>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+        {% capture cat_path %}assets/{{ category_name }}/{% endcapture %}
+        <section class="catalog-group">
+          <h2 class="catalog-group-title">
+            <a href="{{ site.baseurl }}/assets/Languages/{{ category_name }}">{{ category_name }}</a>
+          </h2>
+          <ul class="catalog-items-list">
+            {% for cs in site.pages %}
+              {% if cs.path contains cat_path %}
+                {% assign script_file = cs.path | split: '/' | last %}
+                {% assign script_name = script_file | split: '.md' | first %}
+                <li>
+                  <a href="{{ cs.url | relative_url }}">{{ script_name }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
+    {% endfor %}
+  </div>
 </div>

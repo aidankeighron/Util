@@ -2,7 +2,6 @@
   <div class="sidebar-header">
     <a href="{{ site.baseurl }}/" class="sidebar-brand">
       <span class="brand-name">{{ site.title }}</span>
-      <span class="brand-tag">Tools</span>
     </a>
   </div>
 
@@ -17,49 +16,48 @@
   </div>
 
   <nav class="sidebar-nav" id="sidebar-nav">
-    {% assign lang_pages = site.pages | where_exp: "item", "item.path contains 'assets/Languages/'" | sort: "path" %}
-    {% for lp in lang_pages %}
-      {% assign category_file = lp.path | split: '/' | last %}
-      {% assign category_name = category_file | split: '.md' | first %}
-      {% assign category_scripts = site.pages | where: "language", category_name | sort: "path" %}
-      {% assign is_current_cat = false %}
-      {% if page.language == category_name or page.path == lp.path %}
-        {% assign is_current_cat = true %}
-      {% endif %}
+    {% for lp in site.pages %}
+      {% if lp.path contains 'assets/Languages/' %}
+        {% assign category_file = lp.path | split: '/' | last %}
+        {% assign category_name = category_file | split: '.md' | first %}
+        {% capture cat_path %}assets/{{ category_name }}/{% endcapture %}
+        {% assign is_current_cat = false %}
+        {% if page.language == category_name or page.path == lp.path %}
+          {% assign is_current_cat = true %}
+        {% endif %}
 
-      <div class="nav-category {% if is_current_cat %}active-category expanded{% else %}expanded{% endif %}" data-category="{{ category_name }}">
-        <div class="nav-category-header">
-          <button type="button" class="category-toggle-btn" aria-label="Toggle {{ category_name }}">
-            <span class="chevron-icon">›</span>
-          </button>
-          <a href="{{ site.baseurl }}/assets/Languages/{{ category_name }}" class="category-title-link {% if page.path == lp.path %}active{% endif %}">
-            <span class="category-title-text">{{ category_name }}</span>
-            <span class="category-count">{{ category_scripts.size }}</span>
-          </a>
+        <div class="nav-category {% if is_current_cat %}active-category expanded{% else %}expanded{% endif %}" data-category="{{ category_name }}">
+          <div class="nav-category-header">
+            <button type="button" class="category-toggle-btn" aria-label="Toggle {{ category_name }}">
+              <span class="chevron-icon">›</span>
+            </button>
+            <a href="{{ site.baseurl }}/assets/Languages/{{ category_name }}" class="category-title-link {% if page.path == lp.path %}active{% endif %}">
+              <span class="category-title-text">{{ category_name }}</span>
+            </a>
+          </div>
+          <ul class="nav-items-list">
+            {% for cs in site.pages %}
+              {% if cs.path contains cat_path %}
+                {% assign script_file = cs.path | split: '/' | last %}
+                {% assign script_name = script_file | split: '.md' | first %}
+                {% assign is_current_item = false %}
+                {% if page.path == cs.path or page.url == cs.url %}
+                  {% assign is_current_item = true %}
+                {% endif %}
+                <li class="nav-item">
+                  <a href="{{ cs.url | relative_url }}" class="nav-item-link {% if is_current_item %}active{% endif %}" title="{{ script_name }}">
+                    <span class="nav-item-text">{{ script_name }}</span>
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
         </div>
-        <ul class="nav-items-list">
-          {% for cs in category_scripts %}
-            {% assign script_file = cs.path | split: '/' | last %}
-            {% assign script_name = script_file | split: '.md' | first %}
-            {% assign is_current_item = false %}
-            {% if page.path == cs.path or page.url == cs.url %}
-              {% assign is_current_item = true %}
-            {% endif %}
-            <li class="nav-item">
-              <a href="{{ cs.url | relative_url }}" class="nav-item-link {% if is_current_item %}active{% endif %}" title="{{ script_name }}">
-                <span class="nav-item-text">{{ script_name }}</span>
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
+      {% endif %}
     {% endfor %}
   </nav>
 
   <div class="sidebar-footer">
-    <a href="{{ site.baseurl }}/assets/Tools/Storage%20Architecture" class="footer-feature-link">
-      <span class="feature-icon">⚡</span> Storage Guide
-    </a>
     <a href="https://github.com/aidankeighron/Util" target="_blank" rel="noopener noreferrer" class="footer-github-link">
       GitHub ↗
     </a>

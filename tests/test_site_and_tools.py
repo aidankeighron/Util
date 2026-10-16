@@ -1,5 +1,5 @@
 """
-Unit tests for the Util site structure, navigation layouts, and storage architecture documentation.
+Unit tests for the Util site structure, navigation layouts, and clean catalog presentation.
 """
 
 from typing import Dict, List, Optional, Set
@@ -10,7 +10,7 @@ import unittest
 class TestSiteStructure(unittest.TestCase):
     """
     Test suite verifying site structure, markdown front matter integrity,
-    and storage architecture documentation.
+    selector panel behavior, and clean root catalog presentation.
     """
 
     def setUp(self) -> None:
@@ -58,10 +58,9 @@ class TestSiteStructure(unittest.TestCase):
 
         return front_matter
 
-    def test_storage_architecture_documentation_exists(self) -> None:
+    def test_storage_guide_files_removed(self) -> None:
         """
-        Verifies that both the in-site Storage Architecture document and the
-        standalone architecture guide exist and contain essential guidance.
+        Verifies that storage guide and architectural blueprint files are removed.
 
         Returns:
             None
@@ -73,26 +72,14 @@ class TestSiteStructure(unittest.TestCase):
             self.docs_dir, "STORAGE_ARCHITECTURE.md"
         )
 
-        self.assertTrue(
+        self.assertFalse(
             os.path.exists(site_doc_path),
-            f"Expected in-site documentation at {site_doc_path}",
+            f"Storage guide should be removed at {site_doc_path}",
         )
-        self.assertTrue(
+        self.assertFalse(
             os.path.exists(standalone_doc_path),
-            f"Expected standalone documentation at {standalone_doc_path}",
+            f"Standalone storage guide should be removed at {standalone_doc_path}",
         )
-
-        fm = self._parse_front_matter(site_doc_path)
-        self.assertEqual(fm.get("layout"), "script")
-        self.assertEqual(fm.get("language"), "Tools")
-
-        with open(site_doc_path, "r", encoding="utf-8") as f:
-            content = f.read()
-
-        self.assertIn("appDataFolder", content)
-        self.assertIn("IndexedDB", content)
-        self.assertIn("GoogleDriveStorage", content)
-        self.assertIn("LocalDB", content)
 
     def test_all_content_scripts_have_valid_front_matter(self) -> None:
         """
@@ -153,18 +140,37 @@ class TestSiteStructure(unittest.TestCase):
         sidebar_path = os.path.join(self.docs_dir, "_includes", "sidebar.html")
         header_path = os.path.join(self.docs_dir, "_includes", "header.html")
         default_layout_path = os.path.join(self.docs_dir, "_layouts", "default.html")
+        home_layout_path = os.path.join(self.docs_dir, "_layouts", "home.html")
         css_path = os.path.join(self.docs_dir, "assets", "css", "layout.css")
         js_path = os.path.join(self.docs_dir, "assets", "js", "main.js")
 
         self.assertTrue(os.path.exists(sidebar_path))
         self.assertTrue(os.path.exists(header_path))
         self.assertTrue(os.path.exists(default_layout_path))
+        self.assertTrue(os.path.exists(home_layout_path))
         self.assertTrue(os.path.exists(css_path))
         self.assertTrue(os.path.exists(js_path))
 
-    def test_built_site_contains_selector_panel(self) -> None:
+    def test_scroll_persistence_logic_in_script(self) -> None:
         """
-        Verifies that the generated site contains the left selector panel and search box.
+        Verifies that main.js contains scroll position restoration and
+        scrollIntoView logic to keep the selected item in view.
+
+        Returns:
+            None
+        """
+        js_path = os.path.join(self.docs_dir, "assets", "js", "main.js")
+        with open(js_path, "r", encoding="utf-8") as f:
+            js_code = f.read()
+
+        self.assertIn("scrollIntoView", js_code)
+        self.assertIn("sessionStorage", js_code)
+        self.assertIn("util_sidebar_scroll_top", js_code)
+
+    def test_built_site_contains_selector_panel_and_stripped_home(self) -> None:
+        """
+        Verifies that the generated site contains the left selector panel,
+        and that the root page is stripped down without blueprint text.
 
         Returns:
             None
@@ -179,7 +185,9 @@ class TestSiteStructure(unittest.TestCase):
         self.assertIn('id="sidebar"', index_html)
         self.assertIn('id="sidebar-search"', index_html)
         self.assertIn('class="app-layout"', index_html)
-        self.assertIn('class="content-wrapper"', index_html)
+        self.assertIn('class="catalog-sections"', index_html)
+        self.assertNotIn("Architecture Blueprint", index_html)
+        self.assertNotIn("Storage Guide", index_html)
 
 
 if __name__ == "__main__":
