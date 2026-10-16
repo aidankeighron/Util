@@ -1,8 +1,35 @@
-<header>
-  <nav class="site-nav">
-    <a class="site-title" href="{{site.baseurl}}/">{{site.title}}</a>
-    {% if page.layout == "language" or page.layout == "script" %}
-    <a class="nav-back" href="{{site.baseurl}}/">← Home</a>
-    {% endif %}
-  </nav>
+<header class="top-header">
+  <div class="header-left">
+    <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+    </button>
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="{{ site.baseurl }}/" class="breadcrumb-item">Util</a>
+      {% if page.language %}
+        <span class="breadcrumb-separator">/</span>
+        <a href="{{ site.baseurl }}/assets/Languages/{{ page.language }}" class="breadcrumb-item">{{ page.language }}</a>
+      {% endif %}
+      {% if page.layout == "script" %}
+        {% assign languageFiles = page.path | split: '/' | last %}
+        {% assign script = languageFiles | split: '.md' | first %}
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">{{ script }}</span>
+      {% elsif page.layout == "language" %}
+        {% assign languageFiles = page.path | split: '/' | last %}
+        {% assign language = languageFiles | split: '.md' | first %}
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">{{ language }}</span>
+      {% endif %}
+    </nav>
+  </div>
+  <div class="header-right">
+    <a href="{{ site.baseurl }}/assets/Tools/Storage%20Architecture" class="header-pill-link">
+      <span>Storage Guide</span>
+    </a>
+    <a href="https://github.com/aidankeighron/Util" target="_blank" rel="noopener noreferrer" class="header-link">
+      GitHub
+    </a>
+  </div>
 </header>

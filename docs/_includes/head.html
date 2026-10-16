@@ -2,19 +2,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="{{site.title}}">
-    <meta name="description" content="Programming Cheat Sheet" />
-    <meta property="og:description" content="Programming Cheat Sheet">
-    <meta name="keywords" content="Cheat Sheet, Programming" />
-    <meta property="og:image" content="{{site.baseurl}}/assets/icons/favicon.png">
-    <title>{{site.title}}</title>
-    {% if page.layout == "script" %}
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css" />
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/script.css" />
-    {% else %}
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/home.css" />
-    {% endif %}
+    <meta property="og:title" content="{{ site.title }}">
+    <meta name="description" content="Programming Cheat Sheet & Micro-Tools" />
+    <meta property="og:description" content="Programming Cheat Sheet & Micro-Tools">
+    <meta name="keywords" content="Cheat Sheet, Programming, Developer Tools, Client-Side Utilities" />
+    <meta property="og:image" content="{{ site.baseurl }}/assets/icons/favicon.png">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/syntax.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/layout.css" />
     <script async src="//static.getclicky.com/101392578.js"></script>
     <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101392578ns.gif" /></p></noscript>
-    <link rel="shortcut icon" type="image/png" href="{{site.baseurl}}/assets/icons/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="{{ site.baseurl }}/assets/icons/favicon.png">
 </head>

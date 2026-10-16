@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    <div class="app-layout">
+      {% include sidebar.html %}
+      <div class="content-wrapper">
+        {% include header.html %}
+        <main class="main-panel">
+          {{ content }}
+        </main>
+      </div>
+    </div>
+    <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+    <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+  </body>
+</html>

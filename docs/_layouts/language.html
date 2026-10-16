@@ -1,26 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-  {% include head.html %}
-  <body>
-    {% include header.html %}
-    <main>
-      {% assign languageFiles = page.path | split:'/' | last %}
-      {% assign language = languageFiles | split:'.md' | first %}
-      <h1 class="page-title">{{language}}</h1>
-      <section class="languages">
-        {% for pagePath in site.pages %}
-          {% capture languagePath %}assets/{{language}}{% endcapture %}
-          {% if pagePath.path contains languagePath %}
-            {% assign scriptFile = pagePath.path | split:'/' | last %}
-            {% assign script = scriptFile | split:'.md' | first %}
-            <a href="{{site.baseurl}}/assets/{{language}}/{{script}}">
-              <article class="language">
-                <h2 class="language-title">{{script}}</h2>
-              </article>
-            </a>
-          {% endif %}
-        {% endfor %}
-      </section>
-    </main>
-  </body>
-</html>
+---
+layout: default
+---
+{% assign languageFiles = page.path | split: '/' | last %}
+{% assign language = languageFiles | split: '.md' | first %}
+{% assign category_scripts = site.pages | where: "language", language | sort: "path" %}
+
+<div class="category-view">
+  <div class="category-view-header">
+    <div class="category-breadcrumb-tag">Category</div>
+    <h1 class="page-title">{{ language }}</h1>
+    <p class="category-desc">
+      {{ category_scripts.size }} topics available. Select a topic from the left selector panel or click any card below.
+    </p>
+  </div>
+
+  <section class="scripts-grid">
+    {% for cs in category_scripts %}
+      {% assign scriptFile = cs.path | split: '/' | last %}
+      {% assign script = scriptFile | split: '.md' | first %}
+      <a href="{{ cs.url | relative_url }}" class="script-card">
+        <div class="script-card-content">
+          <h2 class="script-card-title">{{ script }}</h2>
+          <span class="script-card-meta">{{ language }} Reference</span>
+        </div>
+        <span class="script-card-arrow">→</span>
+      </a>
+    {% endfor %}
+  </section>
+</div>

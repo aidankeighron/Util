@@ -1,47 +1,68 @@
-# Viewing
-Github pages site for easy viewing: [site](https://aidankeighron.github.io/Util/)
+# Util
 
-# Contributing
-To contribute: make a pull request either adding concepts to an existing languages or adding a new language
+A hub of quick-reference cheat sheets, programming concepts, and zero-database client-side micro-tools.
 
-## Adding a Language
-- create a folder that is the same name as your language in the `docs/assets/` directory containing .md files with example scripts covering the aspects of your language
+## Viewing the Site
+- **Live GitHub Pages Site**: [https://aidankeighron.github.io/Util/](https://aidankeighron.github.io/Util/)
+- **UI Layout**: Uses a two-panel interface with a compact selector panel on the left (featuring real-time search filtering, collapsible categories, and item counters) and the active tool or cheat sheet displayed on the right.
 
-**EX .md file:**
-~~~markdown
----
-layout: script
-language: Java
 ---
 
-```java
-public <T extends Number & Comparable<T>> void multipleBounds(T boundedParam) {
+## Zero-Database User-Scoped Storage Architecture
 
-}
-```
-~~~
-Make sure `layout` is `script` and `language` is the language the script belongs to. With the name of the file being the concept you are covering.
-- add {your language}.md to docs/assets/languages 
+When building new tools (such as uploading and analyzing game library CSVs, personal finance trackers, or log analyzers), **you do not need a backend database**:
+- **IndexedDB (Local-First)**: Parses and queries data directly in the user's browser sandbox for instant, zero-latency visualizations and offline use.
+- **Google Drive `appDataFolder` (Cloud Persistence)**: Uses the restricted OAuth scope `https://www.googleapis.com/auth/drive.appdata` to save private data directly inside the user's hidden Google Drive application data folder.
+  - Zero server hosting fees (\$0 backend cost).
+  - Data is 100% private to the user; invisible in their regular Drive UI; the app can only see files it created; users cannot access each other's data.
+  - Generous quota backed by the user's free 15 GB Google Drive storage.
+
+For full architectural blueprints, copy-pasteable JavaScript classes (`GoogleDriveStorage`, `LocalDB`), and AI agent prompt templates:
+- **Site Guide**: [Storage Architecture Page](docs/assets/Tools/Storage%20Architecture.md)
+- **Standalone Document**: [docs/STORAGE_ARCHITECTURE.md](docs/STORAGE_ARCHITECTURE.md)
+
+---
+
+## Adding Concepts, Languages, or Tools
+
+### Adding a New Language or Category
+1. Create a folder in `docs/assets/` named after your category or language (e.g., `docs/assets/Rust/`).
+2. Add `{CategoryName}.md` to `docs/assets/Languages/`:
+   ```markdown
+   ---
+   layout: language
+   ---
+   ```
+3. Add concept or tool `.md` files into `docs/assets/{CategoryName}/` using the `script` layout.
+
+### Adding a Concept or Tool Script
+Create a `.md` file in `docs/assets/{CategoryName}/{ToolName}.md`:
 ```markdown
 ---
-layout: language
----
-```
-Make sure `layout` is `language`. The name of the language should be the name of the file.
-## Adding to a language
-- add a .md with the name of the concept you would like to cover to the `docs/assets/{your language}` directory
-
-**EX:**
-~~~markdown
----
 layout: script
-language: Java
+language: {CategoryName}
 ---
 
-```java
-public <T extends Number & Comparable<T>> void multipleBounds(T boundedParam) {
+## Tool or Concept Description
 
-}
+Your content, code snippets, or interactive tool markup here.
 ```
-~~~
-Make sure `layout` is `script` and `language` is the language the script belongs to. With the name of the file being the concept you are covering.
+Any added file is automatically discovered and listed in the left selector panel and on category cards.
+
+---
+
+## Local Development & Testing
+
+### Running Jekyll Locally
+```bash
+cd docs
+bundle install
+bundle exec jekyll serve
+```
+Open `http://localhost:4000/Util/` in your browser.
+
+### Running Automated Tests
+```bash
+python -m unittest discover -s tests -p "test_*.py" -v
+```
+Verifies front-matter schema integrity, category consistency, documentation links, and layout structures.
